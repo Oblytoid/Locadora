@@ -1,6 +1,6 @@
 ﻿namespace Trabalho_de_Linguagem_de_Programacao_VIII
 {
-    partial class Form1
+    partial class Catalogo_Jogos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Catalogo_Jogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(542, 650);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ClientSize = new System.Drawing.Size(973, 573);
+            this.Name = "Catalogo_Jogos";
+            this.Text = "Catalogo_Jogos";
             this.ResumeLayout(false);
 
         }
@@ -46,4 +44,3 @@
         #endregion
     }
 }
-

@@ -8,3 +8,14 @@ D:\Faculdade\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem 
 D:\Faculdade\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.exe
 D:\Faculdade\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.pdb
 D:\Faculdade\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Cadastrar_Usuario.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Trabalho de Linguagem de Programacao VIII.exe.config
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.exe
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.pdb
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Trabalho de Linguagem de Programacao VIII.exe
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Trabalho de Linguagem de Programacao VIII.pdb
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.csprojResolveAssemblyReference.cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Cadastrar_Usuario.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Form1.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Properties.Resources.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.csproj.GenerateResource.Cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Catalogo_Jogos.resources

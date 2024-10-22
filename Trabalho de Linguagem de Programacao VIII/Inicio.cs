@@ -21,5 +21,21 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII
         {
 
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastrar_Usuario cadastrar = new Cadastrar_Usuario();
+            cadastrar.ShowDialog();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gestãoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
