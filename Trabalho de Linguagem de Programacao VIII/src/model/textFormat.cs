@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Trabalho_de_Linguagem_de_Programacao_VIII.src.model
+namespace Locadora.src.model
 {
     class TextFormat
     {
         public static String cpfFormat(String cpf, bool staySave =  false)
         {
-            cpf = cpf.Replace(".", "").Replace("-", "");
+            cpf = cpf.Replace(".", "").Replace(",", "").Replace("-", "");
 
 
             if (cpf.Length > 11)
@@ -43,5 +44,7 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII.src.model
             }
             return telefone;
         }
+
+        
     }
 }

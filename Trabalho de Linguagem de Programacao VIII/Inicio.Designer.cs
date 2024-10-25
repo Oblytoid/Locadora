@@ -1,4 +1,4 @@
-﻿namespace Trabalho_de_Linguagem_de_Programacao_VIII
+﻿namespace Locadora
 {
     partial class Form1
     {

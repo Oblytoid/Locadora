@@ -1,4 +1,4 @@
-﻿namespace Trabalho_de_Linguagem_de_Programacao_VIII
+﻿namespace Locadora
 {
     partial class Cadastrar_Usuario
     {
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_novo = new System.Windows.Forms.Button();
             this.txt_nome = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btn_cancel);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btn_novo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -73,14 +73,14 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_cancel
             // 
-            this.button3.Location = new System.Drawing.Point(477, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Fechar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_cancel.Location = new System.Drawing.Point(440, 17);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancel.TabIndex = 19;
+            this.btn_cancel.Text = "Cancelar";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // button2
             // 
@@ -142,6 +142,7 @@
             this.txt_cpf.Size = new System.Drawing.Size(188, 20);
             this.txt_cpf.TabIndex = 5;
             this.txt_cpf.TextChanged += new System.EventHandler(this.txt_cpf_TextChanged);
+            this.txt_cpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cpf_KeyPress);
             // 
             // lbl_dataNascimento
             // 
@@ -257,8 +258,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel1;       
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_sobrenome;
@@ -271,7 +271,7 @@
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_novo;
         private System.Windows.Forms.Label lbl_cpf;

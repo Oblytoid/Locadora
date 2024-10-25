@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Trabalho_de_Linguagem_de_Programacao_VIII.src.controller;
-using Trabalho_de_Linguagem_de_Programacao_VIII.src.model;
+using Locadora.src.controller;
+using Locadora.src.model;
 
 
-namespace Trabalho_de_Linguagem_de_Programacao_VIII
+namespace Locadora
 {
     public partial class Cadastrar_Usuario : Form
     {
@@ -22,8 +21,6 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII
 
         }
 
-        SqlConnection cn = new SqlConnection(@"Data Source=DESKTOP-FQKS1SS\SQLEXPRESS; integrated security=SSPI;initial catalog=Locadora");
-        //SqlConnection cn = new SqlConnection(@"Data Source=LABHW-08; integrated security=SSPI;initial catalog=Locadora1");
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
@@ -63,6 +60,11 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII
             }
         }
 
+        private void txt_cpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Required.onlyNumber(e,txt_cpf);
+        }
+
         private void txt_telefone_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -78,31 +80,26 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII
 
         private void btn_novo_Click(object sender, EventArgs e)
         {
-            Required.CheckRequiredField(txt_nome,txt_endereco,txt_cpf);
-            try
+
+            if (Required.CheckRequiredField(txt_nome, txt_endereco, txt_cpf, txt_sobrenome, txt_telefone))
             {
-                cn.Open();
-                String query = "INSERT INTO Usuario (cpf, nome, sobrenome, telefone, endereco, email, data_nasc) " +
-                                        "VALUES (@Cpf, @Nome, @Sobrenome, @Telefone, @Endereco, @Email, @DataNascimento)";
 
-                using (SqlCommand command = new SqlCommand(query, cn))
-                {
+                User user = new User(
+                    TextFormat.cpfFormat(txt_cpf.Text,true), txt_nome.Text,txt_sobrenome.Text,
+                    txt_telefone.Text, txt_endereco.Text, txt_email.Text, dtp_nascimento.Text);
+                DataBase.saveUser(user);
+                return;
+                
 
-                    command.Parameters.AddWithValue("@Cpf", txt_cpf.Text);
-                    command.Parameters.AddWithValue("@Nome", txt_nome.Text);
-                    command.Parameters.AddWithValue("@Sobrenome", txt_sobrenome.Text);
-                    command.Parameters.AddWithValue("@Telefone", txt_telefone.Text);
-                    command.Parameters.AddWithValue("@Endereco", txt_endereco.Text);
-                    command.Parameters.AddWithValue("@Email", txt_email.Text);
-                    command.Parameters.AddWithValue("@DataNascimento", dtp_nascimento.Text);
 
-                    int rowsAffected = command.ExecuteNonQuery();
-                    Console.WriteLine($"Número de linhas afetadas: {rowsAffected}");
-                }
-            }catch(Exception ex)
-                {
-                    Console.WriteLine($"Erro: {ex.Message}");
-            }
+            };
+            
+           
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

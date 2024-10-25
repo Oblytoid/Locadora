@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Trabalho_de_Linguagem_de_Programacao_VIII
+namespace Locadora
 {
     static class Program
     {

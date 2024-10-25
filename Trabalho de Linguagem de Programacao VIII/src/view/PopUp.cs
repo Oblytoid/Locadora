@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Trabalho_de_Linguagem_de_Programacao_VIII.src.view
+namespace Locadora.src.view
 {
     class PopUp
     {
@@ -14,6 +14,8 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII.src.view
 
         public static void PopUpMessage(Object obj, String message = "Campo obrigatorio!!")
         {
+            const int TIME = 3000;
+
             if (!toolTips.ContainsKey(obj))
             {
                 toolTips[obj] = new ToolTip();

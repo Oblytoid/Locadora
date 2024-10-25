@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Trabalho_de_Linguagem_de_Programacao_VIII
+namespace Locadora
 {
     public partial class Form1 : Form
     {
