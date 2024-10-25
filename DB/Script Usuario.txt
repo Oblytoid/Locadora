@@ -1,0 +1,11 @@
+CREATE TABLE Usuario
+	(cpf varchar(11) NOT NULL PRIMARY KEY,
+	nome varchar(50) NOT NULL,
+	sobrenome varchar(50)NOT NULL,
+	telefone varchar(15) NOT NULL,
+	endereco varchar(100) NOT NULL,
+	email varchar(50) NOT NULL,
+	data_nasc date
+
+);
+

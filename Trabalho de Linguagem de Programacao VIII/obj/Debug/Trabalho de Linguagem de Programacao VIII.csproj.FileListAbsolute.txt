@@ -19,3 +19,16 @@ E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Properties.Resources.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.csproj.GenerateResource.Cache
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Catalogo_Jogos.resources
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Trabalho de Linguagem de Programacao VIII.exe.config
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.exe
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.pdb
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Trabalho de Linguagem de Programacao VIII.exe
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Trabalho de Linguagem de Programacao VIII.pdb
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.csprojResolveAssemblyReference.cache
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Cadastrar_Usuario.resources
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Catalogo_Jogos.resources
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Form1.resources
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Properties.Resources.resources
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho de Linguagem de Programacao VIII.csproj.GenerateResource.Cache
+D:\Faculdade\C#\1\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Gestao_Usuario.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Trabalho_de_Linguagem_de_Programacao_VIII.Gestao_Usuario.resources

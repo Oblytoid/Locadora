@@ -37,5 +37,11 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII
         {
 
         }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Catalogo_Jogos catalogo = new Catalogo_Jogos();
+            catalogo.ShowDialog();
+        }
     }
 }

@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Trabalho_de_Linguagem_de_Programacao_VIII.src
+namespace Trabalho_de_Linguagem_de_Programacao_VIII.src.model
 {
-    class textFormat
+    class TextFormat
     {
-        public static String cpfFormat(String cpf)
+        public static String cpfFormat(String cpf, bool staySave =  false)
         {
             cpf = cpf.Replace(".", "").Replace("-", "");
-            Console.WriteLine(cpf);
+
+
             if (cpf.Length > 11)
             {
                 cpf = cpf.Substring(0, 11); // Limita o comprimento a 11 dígitos
             }
+
+            if (staySave) return cpf;
 
             if (cpf.Length <= 3) return cpf;
             if (cpf.Length <= 6) return $"{cpf.Substring(0, 3)}.{cpf.Substring(3)}";
@@ -23,15 +26,14 @@ namespace Trabalho_de_Linguagem_de_Programacao_VIII.src
             return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9)}";
         }
 
-        public static String telFormat(String telefone)
+        public static String telFormat(String telefone, bool staySave = false)
         {
             telefone = telefone.Replace(".", "").Replace("(", "").Replace(")", "").Replace(" ","").Replace("-", "");
-            Console.WriteLine(telefone);
 
             if (telefone.Length > 0){
                 if (telefone.Length > 11) telefone = telefone.Substring(0, 11);
-            
-               
+                if (staySave) return telefone;
+
                 if (telefone.Length <= 2) return $"({telefone}";
                 if (telefone.Length <= 6) return $"({telefone.Substring(0, 2)}) {telefone.Substring(2)}";
                 if (telefone.Length <= 10) return $"({telefone.Substring(0, 2)}) {telefone.Substring(2, 4)}-{telefone.Substring(6)}";
