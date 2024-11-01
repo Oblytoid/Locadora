@@ -1,5 +1,4 @@
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.config
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Gestao_Usuario.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Properties.Resources.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.GenerateResource.Cache
@@ -10,3 +9,5 @@ E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Form1.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.exe
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.pdb
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.AssemblyReference.cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.CoreCompileInputs.cache

@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{05EC8AC4-3231-4CE2-8607-4DB05E7EE5EF}|Trabalho de Linguagem de Programacao VIII\\Locadora.csproj|e:\\codigos\\c#\\trabalho de linguagem de programacao viii\\trabalho de linguagem de programacao viii\\cadastrar usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{05EC8AC4-3231-4CE2-8607-4DB05E7EE5EF}|Trabalho de Linguagem de Programacao VIII\\Locadora.csproj|solutionrelative:trabalho de linguagem de programacao viii\\cadastrar usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05EC8AC4-3231-4CE2-8607-4DB05E7EE5EF}|Trabalho de Linguagem de Programacao VIII\\Locadora.csproj|e:\\codigos\\c#\\trabalho de linguagem de programacao viii\\trabalho de linguagem de programacao viii\\cadastrar usuario.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05EC8AC4-3231-4CE2-8607-4DB05E7EE5EF}|Trabalho de Linguagem de Programacao VIII\\Locadora.csproj|solutionrelative:trabalho de linguagem de programacao viii\\cadastrar usuario.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05EC8AC4-3231-4CE2-8607-4DB05E7EE5EF}|Trabalho de Linguagem de Programacao VIII\\Locadora.csproj|e:\\codigos\\c#\\trabalho de linguagem de programacao viii\\trabalho de linguagem de programacao viii\\src\\model\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05EC8AC4-3231-4CE2-8607-4DB05E7EE5EF}|Trabalho de Linguagem de Programacao VIII\\Locadora.csproj|solutionrelative:trabalho de linguagem de programacao viii\\src\\model\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cadastrar Usuario.Designer.cs",
+              "DocumentMoniker": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.Designer.cs",
+              "RelativeDocumentMoniker": "Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.Designer.cs",
+              "ToolTip": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.Designer.cs",
+              "RelativeToolTip": "Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:11:08.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cadastrar Usuario.cs [Design]",
+              "DocumentMoniker": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.cs",
+              "RelativeDocumentMoniker": "Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.cs",
+              "ToolTip": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.cs [Design]",
+              "RelativeToolTip": "Trabalho de Linguagem de Programacao VIII\\Cadastrar Usuario.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T15:10:33.151Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\Trabalho de Linguagem de Programacao VIII\\src\\model\\DataBase.cs",
+              "RelativeDocumentMoniker": "Trabalho de Linguagem de Programacao VIII\\src\\model\\DataBase.cs",
+              "ToolTip": "E:\\Codigos\\C#\\Trabalho de Linguagem de Programacao VIII\\Trabalho de Linguagem de Programacao VIII\\src\\model\\DataBase.cs",
+              "RelativeToolTip": "Trabalho de Linguagem de Programacao VIII\\src\\model\\DataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T14:48:17.59Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
