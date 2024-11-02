@@ -61,6 +61,7 @@ namespace Locadora.src.controller
                     if (textBox.Name == "txt_cpf" && !Required.isCpfValid(textBox.Text))
                     {
                         PopUp.PopUpMessage(textBox,"Cpf Invalido!!");
+                        allFieldIsOk = false;
                     }
 
                     if (String.IsNullOrEmpty(textBox.Text.Trim()))

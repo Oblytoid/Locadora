@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Locadora.src.model;
 
 namespace Locadora
 {
@@ -15,6 +16,12 @@ namespace Locadora
         public Catalogo_Jogos()
         {
             InitializeComponent();
+        }
+
+        private void btt_add_Click(object sender, EventArgs e)
+        {
+            Adicionar_jogo addJogo = new Adicionar_jogo();
+            addJogo.ShowDialog();
         }
     }
 }

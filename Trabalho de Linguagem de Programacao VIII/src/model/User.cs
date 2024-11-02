@@ -69,5 +69,10 @@ namespace Locadora.src.model
             set { dataNascimento = value; }
         }
 
+        public override string ToString()
+        {
+            return $"CPF:{cpf}\nNome:{nome}\nSobrenome:{sobrenome}"+
+                $"\nTelefone:{telefone}\nEnderec:{endereco}\nEmail:{email}\nData de Nascimento:{dataNascimento}";
+        }
     }
 }

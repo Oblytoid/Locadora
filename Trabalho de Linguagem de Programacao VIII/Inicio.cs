@@ -35,7 +35,8 @@ namespace Locadora
 
         private void gestãoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Gestao_Usuario gerenciar = new Gestao_Usuario();
+            gerenciar.ShowDialog();
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
