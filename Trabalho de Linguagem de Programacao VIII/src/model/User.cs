@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Locadora.src.model
 {
     public class User
     {
+        private int id;
         private String cpf;
         private String nome;
         private String sobrenome;
@@ -15,6 +13,7 @@ namespace Locadora.src.model
         private String endereco;
         private String email;
         private String dataNascimento;
+        private Image profileImage;
 
         public User(String cpf, String nome, String sobrenome, String telefone, String endereco, String email, String dataNascimento)
         {
@@ -26,52 +25,57 @@ namespace Locadora.src.model
             this.email = email;
             this.dataNascimento = dataNascimento;
         }
-        
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string Cpf
         {
             get { return cpf; }
             set { cpf = value; }
         }
-
         public string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
-
         public string Sobrenome
         {
             get { return sobrenome; }
             set { sobrenome = value; }
         }
-
         public string Telefone
         {
             get { return telefone; }
             set { telefone = value; }
         }
-
         public string Endereco
         {
             get { return endereco; }
             set { endereco = value; }
         }
-
         public string Email
         {
             get { return email; }
             set { email = value; }
         }
-
         public String DataNascimento
         {
             get { return dataNascimento; }
             set { dataNascimento = value; }
         }
+        
+        public Image ProfileImage
+        {
+            get { return profileImage; }
+            set { profileImage = value; }
+        }
 
         public override string ToString()
         {
-            return $"CPF:{cpf}\nNome:{nome}\nSobrenome:{sobrenome}"+
+            return $"CPF:{cpf}\nNome:{nome}\nSobrenome:{sobrenome}" +
                 $"\nTelefone:{telefone}\nEnderec:{endereco}\nEmail:{email}\nData de Nascimento:{dataNascimento}";
         }
     }

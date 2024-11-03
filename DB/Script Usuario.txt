@@ -1,18 +1,23 @@
-CREATE TABLE Usuario
-	(cpf varchar(11) NOT NULL PRIMARY KEY,
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='UserImagen' and xtype='U')
+CREATE TABLE UserImagen (
+    id INT PRIMARY KEY IDENTITY,
+    nome NVARCHAR(100),
+    imagem VARBINARY(MAX)
+);
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Usuario' and xtype='U')
+CREATE TABLE Usuario (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	cpf varchar(11) NOT NULL UNIQUE,
 	nome varchar(50) NOT NULL,
 	sobrenome varchar(50)NOT NULL,
 	telefone varchar(15) NOT NULL,
 	endereco varchar(100) NOT NULL,
 	email varchar(50) NOT NULL,
-	data_nasc date
+	data_nasc date,
+	profileImage int,
+	FOREIGN KEY (profileImage) REFERENCES UserImagen(id)
 
-);
-
-CREATE TABLE Imagen (
-    id INT PRIMARY KEY IDENTITY,
-    nome NVARCHAR(100),
-    imagem VARBINARY(MAX)
 );
 
 INSERT INTO Usuario (cpf, nome, sobrenome, telefone, endereco, email, data_nasc) VALUES

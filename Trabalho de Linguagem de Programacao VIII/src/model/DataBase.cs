@@ -1,32 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Locadora.src.controller;
-using System.Data;
 using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Text;
 
 namespace Locadora.src.model
 {
     class DataBase
     {
-
-        //Como funciona: (Servidor; Segurança do acesso ao banco de dados; nome do banco de dados)
-        //"Data Source=LAB3-12;integrated security=SSPI;initial catalog=Locadora"
-        //@"Data Source=LABHW-08; integrated security=SSPI;initial catalog=Locadora"
-        //@"Data Source=DESKTOP-FQKS1SS\SQLEXPRESS; integrated security=SSPI;initial catalog=Locadora";
-
-        private const String SQL = @"Data Source=LABHW-32; integrated security=SSPI;initial catalog=Locadora";
+        private const String SQL = @"Data Source=DESKTOP-FQKS1SS\SQLEXPRESS; integrated security=SSPI;initial catalog=Locadora";
         private static SqlConnection connection = new SqlConnection(SQL);
         private static int rowsAffected;
 
         public static void saveUser(User user)
         {
-            
             try
             {
                 connection.Open();
@@ -61,33 +50,31 @@ namespace Locadora.src.model
         {
             List<User> users = new List<User>();
 
-            
-
-            string query;
+            StringBuilder queryBuilder = new StringBuilder("SELECT * FROM Usuario WHERE 1=1");
 
             if (fill)
             {
-                query = "SELECT * FROM Usuario " +
-                 "WHERE cpf = @Cpf OR " +
-                 "LOWER(nome) LIKE @Nome OR " +
-                 "LOWER(sobrenome) LIKE @Sobrenome OR " +
-                 "LOWER(telefone) LIKE @Telefone OR " +
-                 "LOWER(endereco) LIKE @Endereco OR " +
-                 "LOWER(email) LIKE @Email OR " +
-                 "CONVERT(VARCHAR, data_nasc, 105) LIKE @DataNascimento";
+                if (!string.IsNullOrEmpty(search))
+                {
+                    queryBuilder.Append(" AND (");
+                    queryBuilder.Append(" cpf =  @Cpf");
+                    queryBuilder.Append(" OR LOWER(nome) LIKE @Nome");
+                    queryBuilder.Append(" OR LOWER(sobrenome) LIKE @Sobrenome");
+                    queryBuilder.Append(" OR LOWER(telefone) LIKE @Telefone");
+                    queryBuilder.Append(" OR LOWER(endereco) LIKE @Endereco");
+                    queryBuilder.Append(" OR LOWER(email) LIKE @Email");
+                    queryBuilder.Append(" OR CONVERT(VARCHAR, data_nasc, 105) LIKE @DataNascimento");
+                    queryBuilder.Append(")");
+                }
             }
-            else
-            {
-                query = "SELECT * FROM Usuario";
-            }
-            
+
+            string query = queryBuilder.ToString();
 
             try
             {
                 connection.Open();
-                using (SqlCommand command =  new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-
                     if (fill)
                     {
                         command.Parameters.AddWithValue("@Cpf", search);
@@ -100,7 +87,6 @@ namespace Locadora.src.model
                     }
 
                     using (SqlDataReader reader = command.ExecuteReader())
-
                     {
                         while (reader.Read())
                         {
@@ -112,8 +98,14 @@ namespace Locadora.src.model
                                 reader["telefone"].ToString(),
                                 reader["endereco"].ToString(),
                                 reader["email"].ToString(),
-                                Convert.ToDateTime(reader["data_nasc"].ToString()).ToString("dd-MM-yyyy") 
+                                Convert.ToDateTime(reader["data_nasc"].ToString()).ToString("dd-MM-yyyy")      
+                                
                             );
+                            user.Id = int.Parse(reader["id"].ToString());
+                            if (reader["profileImage"] != DBNull.Value)
+                            {
+                                user.ProfileImage = ByteArrayToImagem((byte[])reader["profileImage"]);
+                            }
                             users.Add(user);
                         }
                     }
@@ -131,18 +123,54 @@ namespace Locadora.src.model
             return users;
         }
 
-        public static void SaveImage(string name, byte[] image)
+        public static int GetUserId(User user)
         {
-            using(SqlConnection connection = new SqlConnection(SQL))
+            string query = "SELECT * FROM Usuario " +
+                 "WHERE cpf = @Cpf";
+
+            try
             {
-                string query = "INSERT INTO Imagens (Nome, Imagem) VALUES (@Nome, @Imagem)";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Nome", name);
+                    command.Parameters.AddWithValue("@Cpf", user.Cpf);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int id = int.Parse(reader["id"].ToString());
+                            return id;
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Out.WriteLine($"Erro: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return 0;
+        }
+
+        public static void SaveImage(User user, byte[] image)
+        {
+            using (SqlConnection connection = new SqlConnection(SQL))
+            {
+                string query = "INSERT INTO Usuario (Nome, Imagem) VALUES (@Nome, @Imagem)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome", user.Id);
                     command.Parameters.AddWithValue("@Imagem", image);
 
                     connection.Open();
                     command.ExecuteNonQuery();
+                    connection.Close();
                 }
             }
         }
@@ -152,17 +180,17 @@ namespace Locadora.src.model
             byte[] image = null;
             using (SqlConnection connection = new SqlConnection(SQL))
             {
-                string query = "SELECT Imagem FROM Imagens WHERE Id = @Id";
+                string query = "SELECT FROM Imagens WHERE Id = @Id";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@id", id);
 
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            image = reader["Imagem"] as byte[];
+                            image = reader["imagem"] as byte[];
                         }
                     }
                 }
@@ -170,11 +198,66 @@ namespace Locadora.src.model
             return image;
         }
 
-        public Image ByteArrayParaImagem(byte[] byteArray)
+        public Image GetUserImage(User user)
+        {
+            byte[] bytes = null;
+            Image image = null;
+            using (SqlConnection connection = new SqlConnection(SQL))
+            {
+                string query = "SELECT FROM profileImage WHERE id = @Id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", user.Id);
+
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bytes = reader["profileImage"] as byte[];
+                        }
+                    }
+                }
+            }
+            image = ByteArrayToImagem(bytes);
+            return image;
+        }
+
+        public void SaveUserImage(User user,Image image)
+        {
+
+            Byte[] imageByte = ImageToByteArray(image);
+
+            using (SqlConnection connection = new SqlConnection(SQL))
+            {
+                connection.Open();
+                string query = "UPDATE Usuario SET profileImage = @ProfileImage WHERE id = @Id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProfileImage", imageByte);
+                    command.Parameters.AddWithValue("@Id", user.Id);
+
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
+        public static Image ByteArrayToImagem(byte[] byteArray)
         {
             using (MemoryStream ms = new MemoryStream(byteArray))
             {
+                Console.WriteLine(ms);
                 return Image.FromStream(ms);
+            }
+        }
+
+        private static byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat);
+                return ms.ToArray();
             }
         }
 
@@ -183,12 +266,9 @@ namespace Locadora.src.model
             byte[] image = GetImage(id);
             if (image != null)
             {
-                pictureBox.Image = ByteArrayParaImagem(image);
-            }
-            else
-            {
-                MessageBox.Show("Imagem não encontrada.");
+                pictureBox.Image = ByteArrayToImagem(image);
             }
         }
+
     }
 }

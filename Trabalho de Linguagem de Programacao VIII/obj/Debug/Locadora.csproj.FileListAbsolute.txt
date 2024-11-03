@@ -1,13 +1,9 @@
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.config
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Gestao_Usuario.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Properties.Resources.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.GenerateResource.Cache
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Cadastrar_Usuario.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.pdb
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Catalogo_Jogos.resources
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Form1.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.exe
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.pdb
 D:\Faculdade\C#\1\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.config
@@ -35,3 +31,24 @@ F:\Faculdade\C#\1\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\De
 F:\Faculdade\C#\1\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Properties.Resources.resources
 F:\Faculdade\C#\1\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.GenerateResource.Cache
 D:\Faculdade\C#\1\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Adicionar_jogo.resources
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.config
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.exe
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.pdb
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Catalogo_Jogos.resources
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Properties.Resources.resources
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.GenerateResource.Cache
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.pdb
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Register.resources
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Management.resources
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Home.resources
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\src\font\Pretendo.ttf
+E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\src\font\Pretendo.ttf
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.CodeAnalysisLog.xml
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.lastcodeanalysissucceeded
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Register.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Management.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Home.resources
