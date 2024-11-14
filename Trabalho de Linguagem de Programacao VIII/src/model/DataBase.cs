@@ -5,6 +5,7 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Text;
+using System.Drawing.Imaging;
 
 namespace Locadora.src.model
 {
@@ -14,7 +15,7 @@ namespace Locadora.src.model
         private static SqlConnection connection = new SqlConnection(SQL);
         private static int rowsAffected;
 
-        public static void saveUser(User user)
+        public static void SaveUser(User user)
         {
             try
             {
@@ -31,6 +32,76 @@ namespace Locadora.src.model
                     command.Parameters.AddWithValue("@Endereco", user.Endereco.ToLower());
                     command.Parameters.AddWithValue("@Email", user.Email.ToLower());
                     command.Parameters.AddWithValue("@DataNascimento", user.DataNascimento);
+
+                    rowsAffected = command.ExecuteNonQuery();
+                    if (user.ProfileImage != null)
+                    {
+                        SaveUserImage(user);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.Out.WriteLine($"Erro: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine($"Número de linhas afetadas: {rowsAffected}");
+                connection.Close();
+            }
+        }//Melhorar
+
+        public static void UpdateUser(User user)
+        {
+            
+            String query;
+            try
+            {
+                 query = "UPDATE Usuario SET telefone = @Telefone, endereco = @Endereco, email = @Email WHERE id = @ID";
+                connection.Open();
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@Telefone", user.Telefone);
+                    command.Parameters.AddWithValue("@Endereco", user.Endereco);
+                    command.Parameters.AddWithValue("@Email", user.Email.ToLower());
+
+                    
+                    command.Parameters.AddWithValue("@ID", user.Id);
+
+                    rowsAffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    if (user.ProfileImage != null)
+                    {
+                         SaveUserImage(user);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.Out.WriteLine($"Erro: {ex.Message}");
+            }
+            finally
+            {
+                Console.WriteLine($"Número de linhas afetadas: {rowsAffected}");
+                connection.Close();
+            }
+        }
+
+        public static void DeleteUser(User user)
+        {
+            try
+            {
+                connection.Open();
+                String query = "DELETE FROM Usuario WHERE id = @ID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@ID", user.Id);
 
                     rowsAffected = command.ExecuteNonQuery();
                 }
@@ -98,8 +169,8 @@ namespace Locadora.src.model
                                 reader["telefone"].ToString(),
                                 reader["endereco"].ToString(),
                                 reader["email"].ToString(),
-                                Convert.ToDateTime(reader["data_nasc"].ToString()).ToString("dd-MM-yyyy")      
-                                
+                                Convert.ToDateTime(reader["data_nasc"].ToString()).ToString("dd-MM-yyyy")
+
                             );
                             user.Id = int.Parse(reader["id"].ToString());
                             if (reader["profileImage"] != DBNull.Value)
@@ -123,7 +194,7 @@ namespace Locadora.src.model
             return users;
         }
 
-        public static int GetUserId(User user)
+        private static int GetUserId(User user)
         {
             string query = "SELECT * FROM Usuario " +
                  "WHERE cpf = @Cpf";
@@ -157,6 +228,8 @@ namespace Locadora.src.model
 
             return 0;
         }
+
+
 
         public static void SaveImage(User user, byte[] image)
         {
@@ -196,79 +269,137 @@ namespace Locadora.src.model
                 }
             }
             return image;
-        }
+        }//Não esta sendo utilizado.
 
-        public Image GetUserImage(User user)
-        {
-            byte[] bytes = null;
-            Image image = null;
-            using (SqlConnection connection = new SqlConnection(SQL))
-            {
-                string query = "SELECT FROM profileImage WHERE id = @Id";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@id", user.Id);
+        
 
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            bytes = reader["profileImage"] as byte[];
-                        }
-                    }
-                }
-            }
-            image = ByteArrayToImagem(bytes);
-            return image;
-        }
-
-        public void SaveUserImage(User user,Image image)
+        private static void SaveUserImage(User user)
         {
 
-            Byte[] imageByte = ImageToByteArray(image);
+            Byte[] imageByte = ImageToByteArray(user.ProfileImage);
 
             using (SqlConnection connection = new SqlConnection(SQL))
             {
                 connection.Open();
+
+                Console.WriteLine("salvando image");
                 string query = "UPDATE Usuario SET profileImage = @ProfileImage WHERE id = @Id";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProfileImage", imageByte);
-                    command.Parameters.AddWithValue("@Id", user.Id);
+                    command.Parameters.AddWithValue("@Id", GetUserId(user));
 
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
             }
+        }// Tentar substituir pelo SaveImage, deixar algo mais generico.
+
+
+        public static List<Game> GetGameList(bool fill = false, string search)
+        {
+            List<Game> games = new List<Game>();
+
+            string query = "SELECT g.id, g.titulo, g.Description, g.dataLancamento, p.nome AS PlatformName, f.nome AS ManufacturerName, gen.nome AS GenreName " + 
+                "FROM Games g " +
+                "JOIN Plataformas p ON g.id_plataforma = p.id " + 
+                "JOIN Fabricantes f ON p.fabricanteID = f.id " + 
+                "JOIN Generos gen ON g.id_genero = gen.id";
+
+            try
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            string desc = reader.GetString(2);
+                            string launchDate = reader.GetDateTime(3).ToString("yyyy-MM-dd");
+                            string platformName = reader.GetString(4);
+                            string manufacturerName = reader.GetString(5);
+                            string genreName = reader.GetString(6);
+                            PlataformItem plataform = new PlataformItem(platformName, false);
+                            GenderItem gender = new GenderItem(genreName);
+                            Game game = new Game(name, desc, plataform, gender) 
+
+                                
+
+                            );
+                            game.id = int.Parse(reader["id"].ToString());
+                            if (reader["gameImage"] != DBNull.Value)
+                            {
+                                game.gameImage = ByteArrayToImagem((byte[])reader["profileImage"]);
+                            }
+                            games.Add(game);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Out.WriteLine($"Erro: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return games;
         }
 
         public static Image ByteArrayToImagem(byte[] byteArray)
         {
-            using (MemoryStream ms = new MemoryStream(byteArray))
+            if (byteArray == null || byteArray.Length == 0)
+                throw new ArgumentException("O array de bytes não pode ser nulo ou vazio.", nameof(byteArray));
+
+            try
             {
-                Console.WriteLine(ms);
-                return Image.FromStream(ms);
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao converter byte array para imagem: {ex.Message}");
+                throw;
             }
         }
 
         private static byte[] ImageToByteArray(Image image)
         {
-            using (MemoryStream ms = new MemoryStream())
+            if (image == null)
+                throw new ArgumentNullException(nameof(image), "A imagem não pode ser nula.");
+
+            try
             {
-                image.Save(ms, image.RawFormat);
-                return ms.ToArray();
+                using (MemoryStream ms = new MemoryStream())
+                {
+
+                    if (ImageFormat.Jpeg.Equals(image.RawFormat) ||
+                        ImageFormat.Png.Equals(image.RawFormat) ||
+                        ImageFormat.Bmp.Equals(image.RawFormat) ||
+                        ImageFormat.Gif.Equals(image.RawFormat))
+                    {
+                        image.Save(ms, image.RawFormat);
+                        return ms.ToArray();
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Formato de imagem não suportado.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao converter a imagem para byte array: {ex.Message}");
+                throw;
             }
         }
-
-        public void ExibirImagemNoPictureBox(int id, PictureBox pictureBox)
-        {
-            byte[] image = GetImage(id);
-            if (image != null)
-            {
-                pictureBox.Image = ByteArrayToImagem(image);
-            }
-        }
-
     }
 }

@@ -93,6 +93,7 @@
             this.btn_gameManagement.TabIndex = 0;
             this.btn_gameManagement.Text = "Gerenciar Jogos";
             this.btn_gameManagement.UseVisualStyleBackColor = false;
+            this.btn_gameManagement.Click += new System.EventHandler(this.btn_gameManagement_Click);
             // 
             // btn_userManagement
             // 

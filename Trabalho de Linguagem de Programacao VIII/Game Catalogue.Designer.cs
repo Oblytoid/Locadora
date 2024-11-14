@@ -29,68 +29,125 @@
         private void InitializeComponent()
         {
             this.DataGrindView_list_games = new System.Windows.Forms.DataGridView();
+            this.btt_search = new System.Windows.Forms.Button();
+            this.txtBox_search = new System.Windows.Forms.TextBox();
+            this.btn_newGame = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
             this.btt_delete = new System.Windows.Forms.Button();
-            this.btt_add = new System.Windows.Forms.Button();
+            this.btt_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrindView_list_games)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGrindView_list_games
             // 
             this.DataGrindView_list_games.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrindView_list_games.Location = new System.Drawing.Point(0, 0);
+            this.DataGrindView_list_games.Location = new System.Drawing.Point(12, 36);
             this.DataGrindView_list_games.Name = "DataGrindView_list_games";
-            this.DataGrindView_list_games.Size = new System.Drawing.Size(471, 514);
+            this.DataGrindView_list_games.Size = new System.Drawing.Size(581, 520);
             this.DataGrindView_list_games.TabIndex = 0;
+            // 
+            // btt_search
+            // 
+            this.btt_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btt_search.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btt_search.FlatAppearance.BorderSize = 3;
+            this.btt_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_search.Location = new System.Drawing.Point(471, 4);
+            this.btt_search.Name = "btt_search";
+            this.btt_search.Size = new System.Drawing.Size(75, 29);
+            this.btt_search.TabIndex = 4;
+            this.btt_search.Text = "Pesquisar";
+            this.btt_search.UseVisualStyleBackColor = false;
+            // 
+            // txtBox_search
+            // 
+            this.txtBox_search.Location = new System.Drawing.Point(59, 9);
+            this.txtBox_search.Name = "txtBox_search";
+            this.txtBox_search.Size = new System.Drawing.Size(406, 20);
+            this.txtBox_search.TabIndex = 3;
+            // 
+            // btn_newGame
+            // 
+            this.btn_newGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btn_newGame.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btn_newGame.FlatAppearance.BorderSize = 3;
+            this.btn_newGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_newGame.Location = new System.Drawing.Point(81, 562);
+            this.btn_newGame.Name = "btn_newGame";
+            this.btn_newGame.Size = new System.Drawing.Size(75, 32);
+            this.btn_newGame.TabIndex = 10;
+            this.btn_newGame.Text = "Novo";
+            this.btn_newGame.UseVisualStyleBackColor = false;
+            this.btn_newGame.Click += new System.EventHandler(this.btn_newGame_Click);
             // 
             // btt_close
             // 
-            this.btt_close.Location = new System.Drawing.Point(374, 520);
+            this.btt_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btt_close.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btt_close.FlatAppearance.BorderSize = 3;
+            this.btt_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_close.Location = new System.Drawing.Point(449, 562);
             this.btt_close.Name = "btt_close";
-            this.btt_close.Size = new System.Drawing.Size(75, 23);
-            this.btt_close.TabIndex = 0;
+            this.btt_close.Size = new System.Drawing.Size(75, 32);
+            this.btt_close.TabIndex = 9;
             this.btt_close.Text = "Fechar";
+            this.btt_close.UseVisualStyleBackColor = false;
+            this.btt_close.Click += new System.EventHandler(this.btt_close_Click);
             // 
             // btt_delete
             // 
-            this.btt_delete.Location = new System.Drawing.Point(196, 520);
+            this.btt_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btt_delete.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btt_delete.FlatAppearance.BorderSize = 3;
+            this.btt_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_delete.Location = new System.Drawing.Point(327, 562);
             this.btt_delete.Name = "btt_delete";
-            this.btt_delete.Size = new System.Drawing.Size(75, 23);
-            this.btt_delete.TabIndex = 1;
+            this.btt_delete.Size = new System.Drawing.Size(75, 32);
+            this.btt_delete.TabIndex = 8;
             this.btt_delete.Text = "Excluir";
-            this.btt_delete.UseVisualStyleBackColor = true;
+            this.btt_delete.UseVisualStyleBackColor = false;
             // 
-            // btt_add
+            // btt_update
             // 
-            this.btt_add.Location = new System.Drawing.Point(31, 520);
-            this.btt_add.Name = "btt_add";
-            this.btt_add.Size = new System.Drawing.Size(75, 23);
-            this.btt_add.TabIndex = 2;
-            this.btt_add.Text = "Adicionar";
-            this.btt_add.UseVisualStyleBackColor = true;
-            this.btt_add.Click += new System.EventHandler(this.btt_add_Click);
+            this.btt_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btt_update.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btt_update.FlatAppearance.BorderSize = 3;
+            this.btt_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_update.Location = new System.Drawing.Point(204, 562);
+            this.btt_update.Name = "btt_update";
+            this.btt_update.Size = new System.Drawing.Size(75, 32);
+            this.btt_update.TabIndex = 7;
+            this.btt_update.Text = "Atualizar";
+            this.btt_update.UseVisualStyleBackColor = false;
             // 
             // Catalogo_Jogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 573);
-            this.Controls.Add(this.btt_add);
-            this.Controls.Add(this.btt_delete);
+            this.ClientSize = new System.Drawing.Size(605, 600);
+            this.Controls.Add(this.btn_newGame);
             this.Controls.Add(this.btt_close);
+            this.Controls.Add(this.btt_delete);
+            this.Controls.Add(this.btt_update);
+            this.Controls.Add(this.btt_search);
+            this.Controls.Add(this.txtBox_search);
             this.Controls.Add(this.DataGrindView_list_games);
             this.Name = "Catalogo_Jogos";
             this.Text = "Catalogo_Jogos";
             ((System.ComponentModel.ISupportInitialize)(this.DataGrindView_list_games)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView DataGrindView_list_games;
-        private System.Windows.Forms.Button btt_close;
+        private System.Windows.Forms.Button btt_search;
+        private System.Windows.Forms.TextBox txtBox_search;
+        private System.Windows.Forms.Button btn_newGame;
+        private System.Windows.Forms.Button btt_update;
         private System.Windows.Forms.Button btt_delete;
-        private System.Windows.Forms.Button btt_add;
+        private System.Windows.Forms.Button btt_close;
     }
 }

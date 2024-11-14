@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterUser));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_novo = new System.Windows.Forms.Button();
@@ -54,8 +55,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Locadora.Properties.Resources.bg_menu;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BackgroundImage = global::Locadora.Properties.Resources.bc_color1;
             this.panel1.Controls.Add(this.btn_cancel);
             this.panel1.Controls.Add(this.btn_novo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -106,7 +106,9 @@
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(12, 180);
+            this.lbl_nome.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_nome.Image = ((System.Drawing.Image)(resources.GetObject("lbl_nome.Image")));
+            this.lbl_nome.Location = new System.Drawing.Point(14, 180);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(38, 13);
             this.lbl_nome.TabIndex = 2;
@@ -115,7 +117,9 @@
             // lbl_sobrenome
             // 
             this.lbl_sobrenome.AutoSize = true;
-            this.lbl_sobrenome.Location = new System.Drawing.Point(12, 216);
+            this.lbl_sobrenome.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_sobrenome.Image = ((System.Drawing.Image)(resources.GetObject("lbl_sobrenome.Image")));
+            this.lbl_sobrenome.Location = new System.Drawing.Point(14, 216);
             this.lbl_sobrenome.Name = "lbl_sobrenome";
             this.lbl_sobrenome.Size = new System.Drawing.Size(64, 13);
             this.lbl_sobrenome.TabIndex = 3;
@@ -127,7 +131,6 @@
             this.txt_sobrenome.Name = "txt_sobrenome";
             this.txt_sobrenome.Size = new System.Drawing.Size(198, 20);
             this.txt_sobrenome.TabIndex = 4;
-            this.txt_sobrenome.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txt_cpf
             // 
@@ -141,7 +144,9 @@
             // lbl_dataNascimento
             // 
             this.lbl_dataNascimento.AutoSize = true;
-            this.lbl_dataNascimento.Location = new System.Drawing.Point(2, 380);
+            this.lbl_dataNascimento.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_dataNascimento.Image = ((System.Drawing.Image)(resources.GetObject("lbl_dataNascimento.Image")));
+            this.lbl_dataNascimento.Location = new System.Drawing.Point(4, 380);
             this.lbl_dataNascimento.Name = "lbl_dataNascimento";
             this.lbl_dataNascimento.Size = new System.Drawing.Size(107, 13);
             this.lbl_dataNascimento.TabIndex = 7;
@@ -170,7 +175,9 @@
             // lbl_endereco
             // 
             this.lbl_endereco.AutoSize = true;
-            this.lbl_endereco.Location = new System.Drawing.Point(12, 278);
+            this.lbl_endereco.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_endereco.Image = ((System.Drawing.Image)(resources.GetObject("lbl_endereco.Image")));
+            this.lbl_endereco.Location = new System.Drawing.Point(14, 278);
             this.lbl_endereco.Name = "lbl_endereco";
             this.lbl_endereco.Size = new System.Drawing.Size(56, 13);
             this.lbl_endereco.TabIndex = 11;
@@ -187,7 +194,9 @@
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(12, 334);
+            this.lbl_email.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_email.Image = ((System.Drawing.Image)(resources.GetObject("lbl_email.Image")));
+            this.lbl_email.Location = new System.Drawing.Point(14, 334);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(38, 13);
             this.lbl_email.TabIndex = 13;
@@ -196,7 +205,9 @@
             // lbl_cpf
             // 
             this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Location = new System.Drawing.Point(12, 252);
+            this.lbl_cpf.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_cpf.Image = ((System.Drawing.Image)(resources.GetObject("lbl_cpf.Image")));
+            this.lbl_cpf.Location = new System.Drawing.Point(14, 252);
             this.lbl_cpf.Name = "lbl_cpf";
             this.lbl_cpf.Size = new System.Drawing.Size(30, 13);
             this.lbl_cpf.TabIndex = 14;
@@ -205,7 +216,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 306);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(14, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 16;
@@ -255,8 +268,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegisterUser";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastrar_Usuario";
+            this.Text = "Cadastrar Usuario";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picture_user)).EndInit();
             this.ResumeLayout(false);

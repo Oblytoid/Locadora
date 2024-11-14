@@ -46,9 +46,10 @@ E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\
 E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\src\font\Pretendo.ttf
 E:\Codigos\C#\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\src\font\Pretendo.ttf
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.CodeAnalysisLog.xml
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.lastcodeanalysissucceeded
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Register.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Management.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Home.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Update.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Update.resources

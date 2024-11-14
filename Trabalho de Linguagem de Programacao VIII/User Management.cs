@@ -13,13 +13,13 @@ namespace Locadora
 {
     public partial class User_Management : Form
     {
+
+        private User selectedUser;
         public User_Management()
         {
             InitializeComponent();
             SetCol();
-            dataGridView_user.DataSource = DataBase.GetUsers();
-           
-            
+            RefreshUserList();
         }
 
         private void SetCol()
@@ -75,14 +75,17 @@ namespace Locadora
             {
                 DataGridViewRow row = dataGridView_user.Rows[e.RowIndex];
 
-                User selectedUser = row.DataBoundItem as User;
+                selectedUser = row.DataBoundItem as User;
 
-                if (selectedUser != null)
-                {
-                    pictureBox1.Image = selectedUser.ProfileImage;
-                }
+                
             }
         }
+
+        private void RefreshUserList()
+        {
+            dataGridView_user.DataSource = DataBase.GetUsers();
+        }
+
         private void btt_search_Click(object sender, EventArgs e)
         {
             
@@ -96,22 +99,30 @@ namespace Locadora
 
         private void btt_delete_Click(object sender, EventArgs e)
         {
-            if (dataGridView_user.SelectedRows.Count == 0)
+            if (selectedUser == null)
             {
-                MessageBox.Show("Selecione uma linha!");
+                MessageBox.Show("Selecione um usuario");
                 return;
             }
 
+            DialogResult result = MessageBox.Show("Você realmente deseja deletar este usuário?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            DataGridViewRow row = dataGridView_user.SelectedRows[0];
+            if (result == DialogResult.Yes)
+            {
+                DataBase.DeleteUser(selectedUser);
+                MessageBox.Show("Usuário deletado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshUserList();
+            }
+            else {
+                MessageBox.Show("Ação cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            User selectedUser = row.DataBoundItem as User;
-            
-            Console.WriteLine(selectedUser);
+
         }
 
         private void btt_close_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -119,20 +130,17 @@ namespace Locadora
         {
             RegisterUser registerUser = new RegisterUser();
             registerUser.Show();
+            RefreshUserList();
         }
 
         private void btt_update_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow row = dataGridView_user.SelectedRows[0];
-
-            User selectedUser = row.DataBoundItem as User;
-
-            pictureBox1.Image = selectedUser.ProfileImage;
+            if (selectedUser != null)
+            {
+                User_Update userUpdate = new User_Update(selectedUser);
+                userUpdate.ShowDialog();
+                RefreshUserList();
+            }
         }
     }
 }

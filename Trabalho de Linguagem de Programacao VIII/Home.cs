@@ -70,8 +70,13 @@ namespace Locadora
         private void btn_userManagement_Click(object sender, EventArgs e)
         {
             User_Management gestaoUsuario = new User_Management();
-            gestaoUsuario.Show();
+            gestaoUsuario.ShowDialog();
         }
 
+        private void btn_gameManagement_Click(object sender, EventArgs e)
+        {
+            Catalogo_Jogos cj = new Catalogo_Jogos();
+            cj.ShowDialog();
+        }
     }
 }

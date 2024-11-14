@@ -68,6 +68,18 @@
     <Compile Include="Game Register.Designer.cs">
       <DependentUpon>Game Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Game Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game Update.Designer.cs">
+      <DependentUpon>Game Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\Game.cs" />
+    <Compile Include="src\model\GenderItem.cs" />
+    <Compile Include="src\model\PlataformItem.cs" />
+    <Compile Include="src\view\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\view\TextFont.cs" />
     <Compile Include="User Register.cs">
       <SubType>Form</SubType>
@@ -100,8 +112,17 @@
     <Compile Include="src\model\TextFormat.cs" />
     <Compile Include="src\model\User.cs" />
     <Compile Include="src\view\PopUp.cs" />
+    <Compile Include="User Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Update.Designer.cs">
+      <DependentUpon>User Update.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Game Register.resx">
       <DependentUpon>Game Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Update.resx">
+      <DependentUpon>Game Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Register.resx">
       <DependentUpon>User Register.cs</DependentUpon>
@@ -125,6 +146,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User Update.resx">
+      <DependentUpon>User Update.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -157,7 +181,7 @@
     <None Include="Resources\bg_menu.png" />
     <Content Include="src\images\bg_menu.png" />
     <None Include="Resources\bc_color1.png" />
-    <Content Include="src\images\bc_color.png" />
+    <Content Include="src\images\bg_color.png" />
     <None Include="Resources\bc_color.png" />
     <None Include="Resources\bg_galaxy.png" />
     <Content Include="src\icon\icon_nes.png" />

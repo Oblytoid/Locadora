@@ -13,7 +13,7 @@ namespace Locadora.src.model
         private String endereco;
         private String email;
         private String dataNascimento;
-        private Image profileImage;
+        private Image profileImage = null;
 
         public User(String cpf, String nome, String sobrenome, String telefone, String endereco, String email, String dataNascimento)
         {

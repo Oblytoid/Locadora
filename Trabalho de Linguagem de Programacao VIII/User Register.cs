@@ -22,11 +22,25 @@ namespace Locadora
             InitializeComponent();
 
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void picture_user_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Arquivos de Imagem (.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string imagePath = openFileDialog.FileName;
+
+                    picture_user.Image = Image.FromFile(imagePath);
+
+                }
+            }
         }
+        
 
         private void lbl_dataNascimento_Click(object sender, EventArgs e)
         {
@@ -82,59 +96,25 @@ namespace Locadora
 
         private void btn_novo_Click(object sender, EventArgs e)
         {
-
-            if (picture_user.Image == null)
-            {
-                if (Required.CheckRequiredField(txt_nome, txt_endereco, txt_cpf, txt_sobrenome, txt_telefone))
-                {
-
-                    User user = new User(
-                    TextFormat.cpfFormat(txt_cpf.Text, true), txt_nome.Text, txt_sobrenome.Text,
-                    txt_telefone.Text, txt_endereco.Text, txt_email.Text, dtp_nascimento.Text);
-
-                    DataBase.saveUser(user);
-
-                }
-                return;
-            }
-
+  
             if (Required.CheckRequiredField(txt_nome, txt_endereco, txt_cpf, txt_sobrenome, txt_telefone))
             {
 
                 User user = new User(
-                    TextFormat.cpfFormat(txt_cpf.Text,true), txt_nome.Text, txt_sobrenome.Text,
-                    txt_telefone.Text, txt_endereco.Text, txt_email.Text, dtp_nascimento.Text);
+                TextFormat.cpfFormat(txt_cpf.Text, true), txt_nome.Text, txt_sobrenome.Text,
+                txt_telefone.Text, txt_endereco.Text, txt_email.Text, dtp_nascimento.Text);
 
-                DataBase.saveUser(user);
-                user.Id = DataBase.GetUserId(user);
+                if (picture_user.Image != null)
+                    user.ProfileImage = picture_user.Image;
 
-                Image userImage = picture_user.Image;
-                db.SaveUserImage(user,userImage);
+                DataBase.SaveUser(user);
+                
             }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void picture_user_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "Arquivos de Imagem (.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                openFileDialog.FilterIndex = 1;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string imagePath = openFileDialog.FileName;
-
-                    picture_user.Image = Image.FromFile(imagePath);
-
-                }
-            }
         }
     }
 }
