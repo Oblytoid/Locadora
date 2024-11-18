@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_novo = new System.Windows.Forms.Button();
+            this.btn_newgame = new System.Windows.Forms.Button();
             this.game_pictureBox = new System.Windows.Forms.PictureBox();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_desc = new System.Windows.Forms.Label();
             this.lbl_plataforma = new System.Windows.Forms.Label();
             this.lbl_genero = new System.Windows.Forms.Label();
-            this.txt_nome = new System.Windows.Forms.TextBox();
-            this.txt_desc = new System.Windows.Forms.TextBox();
-            this.checkList_plataform = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.txt_gameName = new System.Windows.Forms.TextBox();
+            this.txt_gameDescription = new System.Windows.Forms.TextBox();
+            this.listBox_gender = new System.Windows.Forms.ListBox();
+            this.listbox_plataform = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listbox_publisher = new System.Windows.Forms.ListBox();
+            this.dtp_LaunchDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.game_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,23 +61,27 @@
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
-            // btn_novo
+            // btn_newgame
             // 
-            this.btn_novo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
-            this.btn_novo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_novo.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.btn_novo.FlatAppearance.BorderSize = 3;
-            this.btn_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_novo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
-            this.btn_novo.Location = new System.Drawing.Point(40, 418);
-            this.btn_novo.Name = "btn_novo";
-            this.btn_novo.Size = new System.Drawing.Size(75, 37);
-            this.btn_novo.TabIndex = 20;
-            this.btn_novo.Text = "Novo";
-            this.btn_novo.UseVisualStyleBackColor = false;
+            this.btn_newgame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
+            this.btn_newgame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_newgame.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btn_newgame.FlatAppearance.BorderSize = 3;
+            this.btn_newgame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_newgame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
+            this.btn_newgame.Location = new System.Drawing.Point(40, 418);
+            this.btn_newgame.Name = "btn_newgame";
+            this.btn_newgame.Size = new System.Drawing.Size(75, 37);
+            this.btn_newgame.TabIndex = 20;
+            this.btn_newgame.Text = "Novo";
+            this.btn_newgame.UseVisualStyleBackColor = false;
+            this.btn_newgame.Click += new System.EventHandler(this.btn_newgame_Click);
             // 
             // game_pictureBox
             // 
+            this.game_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.game_pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.game_pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.game_pictureBox.Location = new System.Drawing.Point(99, 20);
             this.game_pictureBox.Name = "game_pictureBox";
             this.game_pictureBox.Size = new System.Drawing.Size(101, 117);
@@ -84,7 +92,7 @@
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(44, 167);
+            this.lbl_nome.Location = new System.Drawing.Point(54, 167);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(35, 13);
             this.lbl_nome.TabIndex = 23;
@@ -93,7 +101,7 @@
             // lbl_desc
             // 
             this.lbl_desc.AutoSize = true;
-            this.lbl_desc.Location = new System.Drawing.Point(25, 205);
+            this.lbl_desc.Location = new System.Drawing.Point(35, 198);
             this.lbl_desc.Name = "lbl_desc";
             this.lbl_desc.Size = new System.Drawing.Size(55, 13);
             this.lbl_desc.TabIndex = 24;
@@ -102,7 +110,7 @@
             // lbl_plataforma
             // 
             this.lbl_plataforma.AutoSize = true;
-            this.lbl_plataforma.Location = new System.Drawing.Point(25, 242);
+            this.lbl_plataforma.Location = new System.Drawing.Point(35, 260);
             this.lbl_plataforma.Name = "lbl_plataforma";
             this.lbl_plataforma.Size = new System.Drawing.Size(57, 13);
             this.lbl_plataforma.TabIndex = 25;
@@ -111,60 +119,86 @@
             // lbl_genero
             // 
             this.lbl_genero.AutoSize = true;
-            this.lbl_genero.Location = new System.Drawing.Point(37, 278);
+            this.lbl_genero.Location = new System.Drawing.Point(47, 291);
             this.lbl_genero.Name = "lbl_genero";
             this.lbl_genero.Size = new System.Drawing.Size(42, 13);
             this.lbl_genero.TabIndex = 26;
             this.lbl_genero.Text = "Genero";
             // 
-            // txt_nome
+            // txt_gameName
             // 
-            this.txt_nome.Location = new System.Drawing.Point(100, 164);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(169, 20);
-            this.txt_nome.TabIndex = 27;
+            this.txt_gameName.Location = new System.Drawing.Point(100, 163);
+            this.txt_gameName.Name = "txt_gameName";
+            this.txt_gameName.Size = new System.Drawing.Size(169, 20);
+            this.txt_gameName.TabIndex = 27;
             // 
-            // txt_desc
+            // txt_gameDescription
             // 
-            this.txt_desc.Location = new System.Drawing.Point(99, 205);
-            this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(169, 20);
-            this.txt_desc.TabIndex = 28;
+            this.txt_gameDescription.Location = new System.Drawing.Point(99, 196);
+            this.txt_gameDescription.Name = "txt_gameDescription";
+            this.txt_gameDescription.Size = new System.Drawing.Size(169, 20);
+            this.txt_gameDescription.TabIndex = 28;
             // 
-            // checkList_plataform
+            // listBox_gender
             // 
-            this.checkList_plataform.FormattingEnabled = true;
-            this.checkList_plataform.Items.AddRange(new object[] {
-            "Playstation 1",
-            "Playstation 2",
-            "Playstation 3",
-            "Playstation 4",
-            "Playstation 5",
-            "Playstation Portable",
-            "Playstaton Vita"});
-            this.checkList_plataform.Location = new System.Drawing.Point(100, 242);
-            this.checkList_plataform.Name = "checkList_plataform";
-            this.checkList_plataform.Size = new System.Drawing.Size(168, 19);
-            this.checkList_plataform.TabIndex = 30;
-            this.checkList_plataform.MouseEnter += new System.EventHandler(this.checkList_plataform_MouseEnter);
-            this.checkList_plataform.MouseLeave += new System.EventHandler(this.checkList_plataform_MouseLeave);
+            this.listBox_gender.FormattingEnabled = true;
+            this.listBox_gender.Location = new System.Drawing.Point(99, 289);
+            this.listBox_gender.Name = "listBox_gender";
+            this.listBox_gender.Size = new System.Drawing.Size(170, 17);
+            this.listBox_gender.Sorted = true;
+            this.listBox_gender.TabIndex = 32;
+            this.listBox_gender.MouseEnter += new System.EventHandler(this.listBox_gender_MouseEnter);
+            this.listBox_gender.MouseLeave += new System.EventHandler(this.listBox_gender_MouseLeave);
             // 
-            // checkedListBox1
+            // listbox_plataform
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Playstation 1",
-            "Playstation 2",
-            "Playstation 3",
-            "Playstation 4",
-            "Playstation 5",
-            "Playstation Portable",
-            "Playstaton Vita"});
-            this.checkedListBox1.Location = new System.Drawing.Point(99, 275);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(168, 19);
-            this.checkedListBox1.TabIndex = 31;
-            
+            this.listbox_plataform.FormattingEnabled = true;
+            this.listbox_plataform.Location = new System.Drawing.Point(99, 259);
+            this.listbox_plataform.Name = "listbox_plataform";
+            this.listbox_plataform.Size = new System.Drawing.Size(169, 17);
+            this.listbox_plataform.TabIndex = 33;
+            this.listbox_plataform.MouseEnter += new System.EventHandler(this.listbox_plataform_MouseEnter);
+            this.listbox_plataform.MouseLeave += new System.EventHandler(this.listbox_plataform_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 229);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Desenvolvedora";
+            // 
+            // listbox_publisher
+            // 
+            this.listbox_publisher.FormattingEnabled = true;
+            this.listbox_publisher.Location = new System.Drawing.Point(99, 229);
+            this.listbox_publisher.Name = "listbox_publisher";
+            this.listbox_publisher.Size = new System.Drawing.Size(169, 17);
+            this.listbox_publisher.TabIndex = 35;
+            this.listbox_publisher.MouseEnter += new System.EventHandler(this.listbox_publisher_MouseEnter);
+            this.listbox_publisher.MouseLeave += new System.EventHandler(this.listbox_publisher_MouseLeave);
+            // 
+            // dtp_LaunchDate
+            // 
+            this.dtp_LaunchDate.CustomFormat = "";
+            this.dtp_LaunchDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_LaunchDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_LaunchDate.Location = new System.Drawing.Point(119, 315);
+            this.dtp_LaunchDate.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dtp_LaunchDate.Name = "dtp_LaunchDate";
+            this.dtp_LaunchDate.Size = new System.Drawing.Size(149, 20);
+            this.dtp_LaunchDate.TabIndex = 36;
+            this.dtp_LaunchDate.Value = new System.DateTime(2024, 11, 17, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 321);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Data de Lançamento";
             // 
             // Game_Register
             // 
@@ -172,17 +206,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Locadora.Properties.Resources.bg_galaxy;
             this.ClientSize = new System.Drawing.Size(308, 483);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.checkList_plataform);
-            this.Controls.Add(this.txt_desc);
-            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.listbox_publisher);
+            this.Controls.Add(this.listbox_plataform);
+            this.Controls.Add(this.txt_gameDescription);
+            this.Controls.Add(this.txt_gameName);
+            this.Controls.Add(this.game_pictureBox);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_newgame);
+            this.Controls.Add(this.listBox_gender);
+            this.Controls.Add(this.dtp_LaunchDate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_genero);
             this.Controls.Add(this.lbl_plataforma);
             this.Controls.Add(this.lbl_desc);
             this.Controls.Add(this.lbl_nome);
-            this.Controls.Add(this.game_pictureBox);
-            this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_novo);
             this.Name = "Game_Register";
             this.Text = "Game Register";
             ((System.ComponentModel.ISupportInitialize)(this.game_pictureBox)).EndInit();
@@ -194,15 +232,19 @@
         #endregion
 
         private System.Windows.Forms.Button btn_cancel;
-        private System.Windows.Forms.Button btn_novo;
+        private System.Windows.Forms.Button btn_newgame;
         private System.Windows.Forms.PictureBox game_pictureBox;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_desc;
         private System.Windows.Forms.Label lbl_plataforma;
         private System.Windows.Forms.Label lbl_genero;
-        private System.Windows.Forms.TextBox txt_nome;
-        private System.Windows.Forms.TextBox txt_desc;
-        private System.Windows.Forms.CheckedListBox checkList_plataform;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TextBox txt_gameName;
+        private System.Windows.Forms.TextBox txt_gameDescription;
+        private System.Windows.Forms.ListBox listBox_gender;
+        private System.Windows.Forms.ListBox listbox_plataform;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listbox_publisher;
+        private System.Windows.Forms.DateTimePicker dtp_LaunchDate;
+        private System.Windows.Forms.Label label2;
     }
 }

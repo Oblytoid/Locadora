@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Locadora.src.controller;
 using Locadora.src.model;
+using Locadora.src.services;
 
 namespace Locadora
 {
@@ -73,9 +74,9 @@ namespace Locadora
                 user.Endereco = txt_endereco.Text;
                 user.Telefone = txt_telefone.Text;
                 user.ProfileImage = picture_user.Image;
-                DataBase.UpdateUser(user);
+                UserController.UpdateUser(user);
             }
-            DataBase.UpdateUser(user);
+            UserController.UpdateUser(user);
         }
 
         private void txt_telefone_TextChanged(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Locadora.src.model;
+using Locadora.src.controller;
 
 namespace Locadora
 {
@@ -83,19 +84,16 @@ namespace Locadora
 
         private void RefreshUserList()
         {
-            dataGridView_user.DataSource = DataBase.GetUsers();
+            dataGridView_user.DataSource = UserController.GetAllUsers();
         }
 
         private void btt_search_Click(object sender, EventArgs e)
         {
             
-            dataGridView_user.DataSource = DataBase.GetUsers(true, txtBox_search.Text);
+            dataGridView_user.DataSource = UserController.GetAllUsers(true, txtBox_search.Text);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void btt_delete_Click(object sender, EventArgs e)
         {
@@ -109,8 +107,9 @@ namespace Locadora
 
             if (result == DialogResult.Yes)
             {
-                DataBase.DeleteUser(selectedUser);
+                UserController.DeleteUser(selectedUser);
                 MessageBox.Show("Usuário deletado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 RefreshUserList();
             }
             else {
@@ -141,6 +140,11 @@ namespace Locadora
                 userUpdate.ShowDialog();
                 RefreshUserList();
             }
+        }
+
+        private void User_Management_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

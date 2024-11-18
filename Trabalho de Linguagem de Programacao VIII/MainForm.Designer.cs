@@ -1,6 +1,6 @@
 ﻿namespace Locadora
 {
-    partial class Home
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_alocar = new System.Windows.Forms.Button();
             this.btn_gameManagement = new System.Windows.Forms.Button();
             this.btn_userManagement = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.picture_user = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_user)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(180)))), ((int)(((byte)(178)))));
-            this.panel2.BackgroundImage = global::Locadora.Properties.Resources.bg_galaxy;
-            this.panel2.Location = new System.Drawing.Point(188, -3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(737, 611);
-            this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
@@ -56,7 +44,6 @@
             this.panel1.Controls.Add(this.btn_gameManagement);
             this.panel1.Controls.Add(this.btn_userManagement);
             this.panel1.Controls.Add(this.btn_close);
-            this.panel1.Controls.Add(this.picture_user);
             this.panel1.Location = new System.Drawing.Point(0, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(182, 611);
@@ -129,30 +116,21 @@
             this.btn_close.UseVisualStyleBackColor = false;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // picture_user
-            // 
-            this.picture_user.Location = new System.Drawing.Point(54, 65);
-            this.picture_user.Name = "picture_user";
-            this.picture_user.Size = new System.Drawing.Size(64, 64);
-            this.picture_user.TabIndex = 0;
-            this.picture_user.TabStop = false;
-            this.picture_user.Click += new System.EventHandler(this.picture_user_Click);
-            // 
-            // Home
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::Locadora.Properties.Resources.bg_galaxy;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(924, 601);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Home";
+            this.MinimizeBox = false;
+            this.Name = "MainForm";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_user)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,9 +138,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.PictureBox picture_user;
         private System.Windows.Forms.Button btn_alocar;
         private System.Windows.Forms.Button btn_gameManagement;
         private System.Windows.Forms.Button btn_userManagement;

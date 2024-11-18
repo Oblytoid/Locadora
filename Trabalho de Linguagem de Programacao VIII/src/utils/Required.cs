@@ -5,42 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Locadora.src.view;
 using System.Windows.Forms;
+using Locadora.src.utils;
 
 namespace Locadora.src.controller
 {
     class Required
     {
-        public static bool isCpfValid(String cpf)
-        {
-            
-            cpf = cpf.Replace("-", "").Replace(".", "");
-
-            if (cpf.Length != 11 || cpf.Distinct().Count() == 1) return false;
-
-            int[] weights = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int sum = 0;
-
-            for (int i = 1; i < 10; i++)
-            {
-                sum += int.Parse(cpf[i].ToString()) * weights[i];
-            }
-            sum = (sum * 10) % 11;
-
-            if (sum == 10 || sum == 11) sum = 0;
-            if (!(sum == int.Parse(cpf[10].ToString()))) return false;
-
-            sum = 0;
-
-            for (int i = 0; i < 10; i++)
-            {
-                sum += int.Parse(cpf[i].ToString()) * weights[i];
-            }
-            sum = (sum * 10) % 11;
-
-            if (!(sum == int.Parse(cpf[10].ToString()))) return false;
-
-            return true;
-        }
 
         public static bool CheckRequiredField( params object[] obj)
         {
@@ -58,7 +28,7 @@ namespace Locadora.src.controller
                 {
                     TextBox textBox = field as TextBox;
 
-                    if (textBox.Name == "txt_cpf" && !Required.isCpfValid(textBox.Text))
+                    if (textBox.Name == "txt_cpf" && !Validators.isCpfValid(textBox.Text))
                     {
                         PopUp.PopUpMessage(textBox,"Cpf Invalido!!");
                         allFieldIsOk = false;
@@ -100,7 +70,7 @@ namespace Locadora.src.controller
                 return true;
             }
 
-            PopUp.PopUpMessage(text, "Permitido sometente numeros");
+            PopUp.PopUpMessage(text, "Permitido somente numeros");
             e.Handled = true;
             return false;
         }

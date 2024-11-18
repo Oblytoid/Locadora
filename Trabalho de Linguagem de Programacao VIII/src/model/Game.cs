@@ -14,6 +14,7 @@ namespace Locadora.src.model
         private string desc;
         private PlataformItem plataform;
         private GenderItem gender;
+        private PublisherItem publisher;
         private string launchDate;
         private Image gameImage = null;
 
@@ -23,8 +24,57 @@ namespace Locadora.src.model
             this.desc = desc;
             this.plataform = plataform;
             this.gender = gender;
+            
         }
 
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        
 
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Desc
+        {
+            get { return desc; }
+            set { desc = value; }
+        }
+
+        public PlataformItem Plataform
+        {
+            get { return plataform; }
+            set { plataform = value; }
+        }
+
+        public GenderItem Gender
+        {
+            get { return gender; }
+            set { gender = value; }
+        }
+
+        public string LaunchDate
+        {
+            get { return launchDate; }
+            set { launchDate = value; }
+        }
+
+        public PublisherItem Publisher
+        {
+            get { return publisher; }
+            set { publisher = value; }
+        }
+
+        public Image GameImage
+        {
+            get { return gameImage; }
+            set { gameImage = value; }
+        }
+        
     }
 }

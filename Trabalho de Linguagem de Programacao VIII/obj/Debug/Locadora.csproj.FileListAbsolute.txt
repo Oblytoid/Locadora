@@ -53,3 +53,36 @@ E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Update.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Update.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.config
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.exe
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.pdb
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Register.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Update.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Catalogo_Jogos.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Management.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Home.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Properties.Resources.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Update.resources
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.GenerateResource.Cache
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\src\font\Pretendo.ttf
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe
+D:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.pdb
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe.config
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.exe
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.pdb
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Register.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Update.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Catalogo_Jogos.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Management.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Properties.Resources.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Update.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csproj.GenerateResource.Cache
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\src\font\Pretendo.ttf
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.exe
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.pdb
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Location.resources
+G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.MainForm.resources

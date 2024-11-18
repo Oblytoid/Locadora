@@ -14,11 +14,11 @@ using System.IO;
 namespace Locadora
 {
 
-    public partial class Home : Form
+    public partial class MainForm : Form
     {
         
 
-        public Home()
+        public MainForm()
         {
             InitializeComponent();
         }

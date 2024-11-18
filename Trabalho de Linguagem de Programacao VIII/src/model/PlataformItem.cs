@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Locadora.src.controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,29 @@ namespace Locadora.src.model
     {
         private int id;
         private string name;
-        private bool isManufacturer;
+        private int manufacturerID;
 
-        public PlataformItem(string name, bool isManufacturer)
+        public PlataformItem( int id)
         {
-            this.name = name;
-            this.isManufacturer = isManufacturer;
+            this.id = id;
+            this.Name = PlataformController.GetPlataformNameById(manufacturerID);
+
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public int ManufacturerID {
+            get { return manufacturerID; }
         }
 
         public override string ToString()

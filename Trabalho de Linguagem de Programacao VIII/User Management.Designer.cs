@@ -77,7 +77,6 @@
             this.dataGridView_user.RowTemplate.Height = 40;
             this.dataGridView_user.Size = new System.Drawing.Size(581, 520);
             this.dataGridView_user.TabIndex = 0;
-            this.dataGridView_user.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtBox_search
             // 
@@ -178,6 +177,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "User Management";
+            this.Load += new System.EventHandler(this.User_Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_user)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

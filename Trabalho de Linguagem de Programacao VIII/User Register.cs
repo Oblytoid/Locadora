@@ -9,36 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Locadora.src.controller;
 using Locadora.src.model;
-
+using Locadora.src.utils;
 
 namespace Locadora
 {
     public partial class RegisterUser : Form
     {
 
-        DataBase db = new DataBase();
+        
         public RegisterUser()
         {
             InitializeComponent();
 
         }
         private void picture_user_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "Arquivos de Imagem (.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                openFileDialog.FilterIndex = 1;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string imagePath = openFileDialog.FileName;
-
-                    picture_user.Image = Image.FromFile(imagePath);
-
-                }
-            }
+        {   
+            picture_user.Image = ImageHelper.OpenImageFromFile();  
         }
         
 
@@ -107,7 +93,7 @@ namespace Locadora
                 if (picture_user.Image != null)
                     user.ProfileImage = picture_user.Image;
 
-                DataBase.SaveUser(user);
+                UserController.RegisterUser(user);
                 
             }
         }

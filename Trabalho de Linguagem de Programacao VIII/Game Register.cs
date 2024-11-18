@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Locadora.src.controller;
+using Locadora.src.model;
+using Locadora.src.utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +23,9 @@ namespace Locadora
         {
             InitializeComponent();
 
-            originalSize = checkList_plataform.Size;
-            increasedSize = new Size(originalSize.Width, originalSize.Height + 20);
+            originalSize = listbox_plataform.Size;
+            increasedSize = new Size(originalSize.Width, originalSize.Height + 40);
+            RefleshComboBox();
         }
 
         private void btt_close_Click(object sender, EventArgs e)
@@ -30,29 +34,28 @@ namespace Locadora
         }
 
         
+        private void RefleshComboBox()
+        {            
+            foreach (PlataformItem pf in PlataformController.GetAll())
+            {
+                listbox_plataform.Items.Add(pf);
+            }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
+            foreach (GenderItem gr in GenderController.GetAllGenders())
+            {
+                listBox_gender.Items.Add(gr);
+            }
+
+            foreach (PublisherItem pb in PublisherController.GetAllPublishers())
+            {
+                listbox_publisher.Items.Add(pb);
+            }
         }
+        
 
         private void game_pictureBox_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "Arquivos de Imagem (.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-                openFileDialog.FilterIndex = 1;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string imagePath = openFileDialog.FileName;
-
-                    game_pictureBox.Image = Image.FromFile(imagePath);
-
-                }
-            }
+            game_pictureBox.Image = ImageHelper.OpenImageFromFile();
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -60,16 +63,81 @@ namespace Locadora
             this.Close();
         }
 
-        private void checkList_plataform_MouseEnter(object sender, EventArgs e)
+        private void listbox_plataform_MouseEnter(object sender, EventArgs e)
         {
-            checkList_plataform.Size = increasedSize;
+            listbox_plataform.Size = increasedSize;
         }
 
-        private void checkList_plataform_MouseLeave(object sender, EventArgs e)
+        private void listbox_plataform_MouseLeave(object sender, EventArgs e)
         {
-            checkList_plataform.Size = originalSize;
+            listbox_plataform.Size = originalSize;
+            CenterSelectedItem(sender as ListBox);
         }
 
-       
+        private void listBox_gender_MouseEnter(object sender, EventArgs e)
+        {
+            listBox_gender.Size = increasedSize;
+        }
+
+        private void listBox_gender_MouseLeave(object sender, EventArgs e)
+        {
+            listBox_gender.Size = originalSize;
+            CenterSelectedItem(sender as ListBox);
+        }
+        
+        private void CenterSelectedItem(ListBox listBox)
+        {
+
+            int selectedIndex = listBox.SelectedIndex;
+            int halfVisibleItems = listBox.ClientSize.Height / listBox.ItemHeight / 2;
+            listBox.TopIndex = Math.Max(selectedIndex - halfVisibleItems, 0);
+        }
+
+        private void listbox_publisher_MouseEnter(object sender, EventArgs e)
+        {
+            listbox_publisher.Size = increasedSize;
+        }
+
+        private void listbox_publisher_MouseLeave(object sender, EventArgs e)
+        {
+            listbox_publisher.Size = originalSize;
+            CenterSelectedItem(sender as ListBox);
+        }
+
+        private void btn_newgame_Click(object sender, EventArgs e)
+        {
+            if (listbox_plataform.SelectedItem == null || listBox_gender.SelectedItem == null || listbox_publisher.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, selecione todas as opções: Plataforma, Gênero e Publicadora.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_gameName.Text) || string.IsNullOrWhiteSpace(txt_gameDescription.Text))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios: Nome do Jogo e Descrição.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string gameName = txt_gameName.Text;
+            string gameDesc = txt_gameDescription.Text;
+            DateTime launchDate = dtp_LaunchDate.Value;
+            PlataformItem selectedPlatform = (PlataformItem)listbox_plataform.SelectedItem;
+            GenderItem selectedGender = (GenderItem)listBox_gender.SelectedItem;
+            PublisherItem selectedPublisher = (PublisherItem)listbox_publisher.SelectedItem;
+            Image gameImage = game_pictureBox.Image;
+
+            Game newGame = new Game(gameName, gameDesc, selectedPlatform, selectedGender)
+            {
+                LaunchDate = launchDate.ToString(),
+                Publisher = selectedPublisher,
+                GameImage = gameImage
+            };
+
+            GameController.RegisterGame(newGame);
+
+            MessageBox.Show("Jogo registrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
     }
 }
