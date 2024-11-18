@@ -2,6 +2,7 @@
 using Locadora.src.model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Locadora.src.services
         public static void SaveGame(Game game)
         {
             string query = "INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description, image)" +
-                            "VALUES (@Titulo, @Id_genero, @Id_plataforma, @Id_publicadora, @DataLancamento, @Description, @Image)";
+                           "VALUES (@Titulo, @Id_genero, @Id_plataforma, @Id_publicadora, @DataLancamento, @Description, @Image)";
             using (SqlConnection connection = new SqlConnection(SQL))
             {
                 connection.Open();
@@ -31,8 +32,18 @@ namespace Locadora.src.services
                         command.Parameters.AddWithValue("@Id_publicadora", game.Publisher.Id);
                         command.Parameters.AddWithValue("@DataLancamento", game.LaunchDate);
                         command.Parameters.AddWithValue("@Description", game.Desc);
-                        command.Parameters.AddWithValue("@Image", game.GameImage != null ? ImageConverter.ImageToByteArray(game.GameImage) : (object)DBNull.Value);
-                        Console.Out.WriteLine(game.Plataform.Id);
+
+                        SqlParameter imageParam = new SqlParameter("@Image", SqlDbType.VarBinary);
+                        if (game.GameImage != null)
+                        {
+                            imageParam.Value = ImageConverter.ImageToByteArray(game.GameImage);
+                        }
+                        else
+                        {
+                            imageParam.Value = DBNull.Value;
+                        }
+                        command.Parameters.Add(imageParam);
+
                         command.ExecuteNonQuery();
                     }
                 }
@@ -42,63 +53,6 @@ namespace Locadora.src.services
                     Console.WriteLine($"Erro: {ex.Message}");
                 }
             }
-        }
-
-        public static List<Game> GetGameList()
-        {
-            List<Game> games = new List<Game>();
-
-            string query = "SELECT g.image, g.id, g.titulo, g.Description, g.dataLancamento, p.nome AS PlatformName, f.nome AS ManufacturerName, gen.nome AS GenreName, pub.nome AS PublisherName " +
-                            "FROM Games g " +
-                            "JOIN Plataformas p ON g.id_plataforma = p.id " +
-                            "JOIN Fabricantes f ON p.fabricanteID = f.id " +
-                            "JOIN Generos gen ON g.id_genero = gen.id " +
-                            "JOIN Publicadora pub ON g.id_publicadora = pub.id";
-
-            using (SqlConnection connection = new SqlConnection(SQL))
-            {
-                connection.Open();
-                try
-                {
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            PlataformRepository plataformRepository = new PlataformRepository();
-                            while (reader.Read())
-                            {
-                                int id = int.Parse(reader["id"].ToString());
-                                string name = reader["titulo"].ToString();
-                                string desc = reader["Description"].ToString();
-                                string launchDate = reader.GetDateTime(4).ToString("yyyy-MM-dd");
-                                string platformName = reader["PlatformName"].ToString();
-                                string manufacturerName = reader["ManufacturerName"].ToString();
-                                string genderName = reader["GenreName"].ToString();
-                                string publisherName = reader["PublisherName"].ToString();
-                                PlataformItem plataform = new PlataformItem(plataformRepository.GetPlataformIdByName(platformName));
-                                GenderItem gender = new GenderItem(genderName);
-                                PublisherItem publisher = new PublisherItem(publisherName);
-                                Game game = new Game(name, desc, plataform, gender);
-
-                                if (reader["image"] != DBNull.Value)
-                                {
-                                    game.GameImage = ImageConverter.ByteArrayToImagem((byte[])reader["image"]);
-                                }
-
-                                game.Id = id;
-                                game.Publisher = publisher;
-                                games.Add(game);
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Erro: {ex.Message}");
-                }
-            }
-
-            return games;
         }
 
         public static List<Game> GetAllGame()
@@ -124,14 +78,16 @@ namespace Locadora.src.services
 
                             int id = int.Parse(reader["id"].ToString());
                             string name = reader["titulo"].ToString();
-                            string desc = reader["Description"].ToString();
-                            string launchDate = reader.GetDateTime(4).ToString("yyyy-MM-dd");
+                            string desc = reader["Description"].ToString();                            
                             string platformName = reader["PlatformName"].ToString();
                             string manufacturerName = reader["ManufacturerName"].ToString();
                             string genderName = reader["GenreName"].ToString();
                             PlataformItem plataform = new PlataformItem(plataformRepository.GetPlataformIdByName(platformName));
                             GenderItem gender = new GenderItem(genderName);
-                            Game game = new Game(name, desc, plataform, gender);
+                            Game game = new Game(name, desc, plataform, gender)
+                            {
+                                LaunchDate = Convert.ToDateTime(reader["dataLancamento"].ToString()).ToString("dd-MM-yyyy")
+                            };
 
 
                             if (reader["image"] != DBNull.Value)
@@ -209,18 +165,19 @@ namespace Locadora.src.services
             }
         }
 
-
-        public static List<Game> SearchGames(bool filter, string search)
+        public static List<Game> SearchGames(string search)
         {
             List<Game> games = new List<Game>();
-            StringBuilder queryBuilder = new StringBuilder("SELECT g.image, g.id, g.titulo, g.Description, g.dataLancamento, p.nome AS PlatformName, f.nome AS ManufacturerName, gen.nome AS GenreName " 
-                + "FROM Games g " 
-                + "JOIN Plataformas p ON g.id_plataforma = p.id " 
-                + "JOIN Fabricantes f ON p.fabricanteID = f.id " 
-                + "JOIN Generos gen ON g.id_genero = gen.id " 
+            StringBuilder queryBuilder = new StringBuilder("SELECT g.image, g.id, g.titulo, g.Description, g.dataLancamento, p.nome AS PlatformName, f.nome AS ManufacturerName, gen.nome AS GenreName "
+                + "FROM Games g "
+                + "JOIN Plataformas p ON g.id_plataforma = p.id "
+                + "JOIN Fabricantes f ON p.fabricanteID = f.id "
+                + "JOIN Generos gen ON g.id_genero = gen.id "
                 + "WHERE 1=1");
-            if (filter && !string.IsNullOrEmpty(search))
-            { queryBuilder.Append(" AND (");
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                queryBuilder.Append(" AND (");
                 queryBuilder.Append(" LOWER(g.titulo) LIKE @search");
                 queryBuilder.Append(" OR LOWER(gen.nome) LIKE @search");
                 queryBuilder.Append(" OR LOWER(p.nome) LIKE @search");
@@ -229,12 +186,15 @@ namespace Locadora.src.services
                 queryBuilder.Append(")");
             }
 
+            queryBuilder.Append(" ORDER BY g.titulo");
+
             string query = queryBuilder.ToString();
-            try {
+            try
+            {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    if (filter && !string.IsNullOrEmpty(search))
+                    if (!string.IsNullOrEmpty(search))
                     {
                         command.Parameters.AddWithValue("@search", $"%{search.ToLower()}%");
                     }
@@ -262,9 +222,13 @@ namespace Locadora.src.services
                         }
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 Console.Out.WriteLine($"Erro: {ex.Message}");
-            } finally {
+            }
+            finally
+            {
                 connection.Close();
             }
             return games;

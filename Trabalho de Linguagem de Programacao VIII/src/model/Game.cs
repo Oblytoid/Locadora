@@ -75,6 +75,9 @@ namespace Locadora.src.model
             get { return gameImage; }
             set { gameImage = value; }
         }
-        
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

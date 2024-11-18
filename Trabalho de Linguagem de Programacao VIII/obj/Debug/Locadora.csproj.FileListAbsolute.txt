@@ -49,7 +49,6 @@ E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Register.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.RegisterUser.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Management.resources
-E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Home.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.csprojResolveAssemblyReference.cache
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.User_Update.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Update.resources
@@ -86,3 +85,5 @@ G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\De
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Debug\Locadora.pdb
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Location.resources
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.MainForm.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Location.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.MainForm.resources

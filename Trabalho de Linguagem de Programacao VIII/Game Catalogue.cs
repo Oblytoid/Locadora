@@ -20,6 +20,7 @@ namespace Locadora
         public Catalogo_Jogos()
         {
             InitializeComponent();
+            SetCol();
             RefreshGameList();
         }
 
@@ -27,13 +28,6 @@ namespace Locadora
         {
             dgv_list_games.DataSource = GameController.GetAllGames();
         }
-        private void btt_add_Click(object sender, EventArgs e)
-        {
-            Game_Register addJogo = new Game_Register();
-            addJogo.ShowDialog();
-        }
-
-        
 
         private void btt_close_Click(object sender, EventArgs e)
         {
@@ -47,27 +41,62 @@ namespace Locadora
             RefreshGameList();
         }
 
-        private void dgv_list_games_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgv_list_games.Rows[e.RowIndex];
-
-                selectedGame = row.DataBoundItem as Game;
-
-
-            }
-        }
-
         private void SetCol()
         {
             dgv_list_games.AutoGenerateColumns = false;
 
             dgv_list_games.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_list_games.MultiSelect = false;
-            dgv_list_games.CellClick += dgv_list_games_CellContentClick;
-            
+            dgv_list_games.CellClick += dgv_list_games_CellClick;
 
+
+            dgv_list_games.Columns.Add(new DataGridViewImageColumn
+            {
+                DataPropertyName = "GameImage",
+                HeaderText = "Capa",
+                Width = 75,
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            });
+
+            dgv_list_games.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Id",
+                HeaderText = "Id",
+                Width = 35
+            });
+
+            dgv_list_games.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Name",
+                HeaderText = "Titulo",
+                Width = 100
+            });
+
+            dgv_list_games.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Desc",
+                HeaderText = "Descrição",
+                Width = 100
+            });
+
+            dgv_list_games.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Gender",
+                HeaderText = "Gênero",
+                Width = 50
+            });
+            dgv_list_games.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Plataform",
+                HeaderText = "Plataforma",
+                Width = 75
+            });
+            dgv_list_games.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "LaunchDate",
+                HeaderText = "Data de Lançamento",
+                Width = 90
+            });
         }
 
         private void btt_update_Click(object sender, EventArgs e)
@@ -79,11 +108,6 @@ namespace Locadora
         {
             if(selectedGame != null)
             {
-                if (selectedGame == null)
-                {
-                    MessageBox.Show("Selecione um usuario");
-                    return;
-                }
 
                 DialogResult result = MessageBox.Show("Você realmente deseja deletar este Jogo?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -99,5 +123,22 @@ namespace Locadora
                 }
             }
         }
+
+        private void btt_search_Click(object sender, EventArgs e)
+        {
+            dgv_list_games.DataSource = GameController.SearchGames(txtbox_search.Text);
+        }
+
+        private void dgv_list_games_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_list_games.Rows[e.RowIndex];
+
+                selectedGame = row.DataBoundItem as Game;
+            }
+        }
+
+        
     }
 }

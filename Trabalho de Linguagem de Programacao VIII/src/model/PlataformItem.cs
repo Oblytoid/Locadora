@@ -12,12 +12,11 @@ namespace Locadora.src.model
     {
         private int id;
         private string name;
-        private int manufacturerID;
 
-        public PlataformItem( int id)
+        public PlataformItem(int id)
         {
             this.id = id;
-            this.Name = PlataformController.GetPlataformNameById(manufacturerID);
+            this.Name = PlataformController.GetPlataformNameById(id);
 
         }
 
@@ -31,10 +30,6 @@ namespace Locadora.src.model
         {
             get { return name; }
             set { name = value; }
-        }
-
-        public int ManufacturerID {
-            get { return manufacturerID; }
         }
 
         public override string ToString()

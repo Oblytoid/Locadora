@@ -30,7 +30,7 @@
         {
             this.dgv_list_games = new System.Windows.Forms.DataGridView();
             this.btt_search = new System.Windows.Forms.Button();
-            this.txtBox_search = new System.Windows.Forms.TextBox();
+            this.txtbox_search = new System.Windows.Forms.TextBox();
             this.btn_newGame = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
             this.btt_delete = new System.Windows.Forms.Button();
@@ -40,12 +40,19 @@
             // 
             // dgv_list_games
             // 
+            this.dgv_list_games.AllowUserToAddRows = false;
+            this.dgv_list_games.AllowUserToDeleteRows = false;
+            this.dgv_list_games.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgv_list_games.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_list_games.Location = new System.Drawing.Point(12, 36);
+            this.dgv_list_games.MultiSelect = false;
             this.dgv_list_games.Name = "dgv_list_games";
+            this.dgv_list_games.ReadOnly = true;
+            this.dgv_list_games.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgv_list_games.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_list_games.Size = new System.Drawing.Size(581, 520);
             this.dgv_list_games.TabIndex = 0;
-            this.dgv_list_games.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_games_CellContentClick);
+            this.dgv_list_games.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_games_CellClick);
             // 
             // btt_search
             // 
@@ -59,13 +66,14 @@
             this.btt_search.TabIndex = 4;
             this.btt_search.Text = "Pesquisar";
             this.btt_search.UseVisualStyleBackColor = false;
+            this.btt_search.Click += new System.EventHandler(this.btt_search_Click);
             // 
-            // txtBox_search
+            // txtbox_search
             // 
-            this.txtBox_search.Location = new System.Drawing.Point(59, 9);
-            this.txtBox_search.Name = "txtBox_search";
-            this.txtBox_search.Size = new System.Drawing.Size(406, 20);
-            this.txtBox_search.TabIndex = 3;
+            this.txtbox_search.Location = new System.Drawing.Point(59, 9);
+            this.txtbox_search.Name = "txtbox_search";
+            this.txtbox_search.Size = new System.Drawing.Size(406, 20);
+            this.txtbox_search.TabIndex = 3;
             // 
             // btn_newGame
             // 
@@ -133,7 +141,7 @@
             this.Controls.Add(this.btt_delete);
             this.Controls.Add(this.btt_update);
             this.Controls.Add(this.btt_search);
-            this.Controls.Add(this.txtBox_search);
+            this.Controls.Add(this.txtbox_search);
             this.Controls.Add(this.dgv_list_games);
             this.Name = "Catalogo_Jogos";
             this.Text = "Catalogo_Jogos";
@@ -147,7 +155,7 @@
 
         private System.Windows.Forms.DataGridView dgv_list_games;
         private System.Windows.Forms.Button btt_search;
-        private System.Windows.Forms.TextBox txtBox_search;
+        private System.Windows.Forms.TextBox txtbox_search;
         private System.Windows.Forms.Button btn_newGame;
         private System.Windows.Forms.Button btt_update;
         private System.Windows.Forms.Button btt_delete;

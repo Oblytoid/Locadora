@@ -9,7 +9,7 @@ namespace Locadora.src.controller
     {
         public static List<Game> GetAllGames()
         {
-            return GameRepository.GetGameList();
+            return GameRepository.GetAllGame();
         }
 
         public static void RegisterGame(Game game)
@@ -17,9 +17,9 @@ namespace Locadora.src.controller
             GameRepository.SaveGame(game);
         }
 
-        public static List<Game> SearchGames(bool filter, string search)
+        public static List<Game> SearchGames(string search)
         {
-            return GameRepository.SearchGames(filter, search);
+            return GameRepository.SearchGames( search);
         }
 
         public static List<Game> GetGamesByPlatform(int platformId)
