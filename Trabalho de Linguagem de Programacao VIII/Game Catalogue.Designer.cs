@@ -144,6 +144,7 @@
             this.Controls.Add(this.txtbox_search);
             this.Controls.Add(this.dgv_list_games);
             this.Name = "Catalogo_Jogos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogo_Jogos";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list_games)).EndInit();
             this.ResumeLayout(false);
