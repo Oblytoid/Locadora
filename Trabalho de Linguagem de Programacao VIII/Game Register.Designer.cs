@@ -31,15 +31,15 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_newgame = new System.Windows.Forms.Button();
             this.game_pictureBox = new System.Windows.Forms.PictureBox();
-            this.lbl_nome = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_desc = new System.Windows.Forms.Label();
-            this.lbl_plataforma = new System.Windows.Forms.Label();
+            this.lbl_plataform = new System.Windows.Forms.Label();
             this.lbl_genero = new System.Windows.Forms.Label();
             this.txt_gameName = new System.Windows.Forms.TextBox();
             this.txt_gameDescription = new System.Windows.Forms.TextBox();
-            this.listBox_gender = new System.Windows.Forms.ListBox();
+            this.listbox_gender = new System.Windows.Forms.ListBox();
             this.listbox_plataform = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_dev = new System.Windows.Forms.Label();
             this.listbox_publisher = new System.Windows.Forms.ListBox();
             this.dtp_LaunchDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,40 +85,49 @@
             this.game_pictureBox.Location = new System.Drawing.Point(99, 20);
             this.game_pictureBox.Name = "game_pictureBox";
             this.game_pictureBox.Size = new System.Drawing.Size(101, 117);
+            this.game_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.game_pictureBox.TabIndex = 22;
             this.game_pictureBox.TabStop = false;
             this.game_pictureBox.Click += new System.EventHandler(this.game_pictureBox_Click);
             // 
-            // lbl_nome
+            // lbl_name
             // 
-            this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(54, 167);
-            this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(35, 13);
-            this.lbl_nome.TabIndex = 23;
-            this.lbl_nome.Text = "Nome";
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_name.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_name.Location = new System.Drawing.Point(54, 167);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(35, 13);
+            this.lbl_name.TabIndex = 23;
+            this.lbl_name.Text = "Nome";
             // 
             // lbl_desc
             // 
             this.lbl_desc.AutoSize = true;
+            this.lbl_desc.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_desc.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_desc.Location = new System.Drawing.Point(35, 198);
             this.lbl_desc.Name = "lbl_desc";
             this.lbl_desc.Size = new System.Drawing.Size(55, 13);
             this.lbl_desc.TabIndex = 24;
             this.lbl_desc.Text = "Descrição";
             // 
-            // lbl_plataforma
+            // lbl_plataform
             // 
-            this.lbl_plataforma.AutoSize = true;
-            this.lbl_plataforma.Location = new System.Drawing.Point(35, 260);
-            this.lbl_plataforma.Name = "lbl_plataforma";
-            this.lbl_plataforma.Size = new System.Drawing.Size(57, 13);
-            this.lbl_plataforma.TabIndex = 25;
-            this.lbl_plataforma.Text = "Plataforma";
+            this.lbl_plataform.AutoSize = true;
+            this.lbl_plataform.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_plataform.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_plataform.Location = new System.Drawing.Point(35, 260);
+            this.lbl_plataform.Name = "lbl_plataform";
+            this.lbl_plataform.Size = new System.Drawing.Size(57, 13);
+            this.lbl_plataform.TabIndex = 25;
+            this.lbl_plataform.Text = "Plataforma";
             // 
             // lbl_genero
             // 
             this.lbl_genero.AutoSize = true;
+            this.lbl_genero.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_genero.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_genero.Location = new System.Drawing.Point(47, 291);
             this.lbl_genero.Name = "lbl_genero";
             this.lbl_genero.Size = new System.Drawing.Size(42, 13);
@@ -139,16 +148,16 @@
             this.txt_gameDescription.Size = new System.Drawing.Size(169, 20);
             this.txt_gameDescription.TabIndex = 28;
             // 
-            // listBox_gender
+            // listbox_gender
             // 
-            this.listBox_gender.FormattingEnabled = true;
-            this.listBox_gender.Location = new System.Drawing.Point(99, 289);
-            this.listBox_gender.Name = "listBox_gender";
-            this.listBox_gender.Size = new System.Drawing.Size(170, 17);
-            this.listBox_gender.Sorted = true;
-            this.listBox_gender.TabIndex = 32;
-            this.listBox_gender.MouseEnter += new System.EventHandler(this.listBox_gender_MouseEnter);
-            this.listBox_gender.MouseLeave += new System.EventHandler(this.listBox_gender_MouseLeave);
+            this.listbox_gender.FormattingEnabled = true;
+            this.listbox_gender.Location = new System.Drawing.Point(99, 289);
+            this.listbox_gender.Name = "listbox_gender";
+            this.listbox_gender.Size = new System.Drawing.Size(170, 17);
+            this.listbox_gender.Sorted = true;
+            this.listbox_gender.TabIndex = 32;
+            this.listbox_gender.MouseEnter += new System.EventHandler(this.listBox_gender_MouseEnter);
+            this.listbox_gender.MouseLeave += new System.EventHandler(this.listBox_gender_MouseLeave);
             // 
             // listbox_plataform
             // 
@@ -160,14 +169,16 @@
             this.listbox_plataform.MouseEnter += new System.EventHandler(this.listbox_plataform_MouseEnter);
             this.listbox_plataform.MouseLeave += new System.EventHandler(this.listbox_plataform_MouseLeave);
             // 
-            // label1
+            // lbl_dev
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 229);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Desenvolvedora";
+            this.lbl_dev.AutoSize = true;
+            this.lbl_dev.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_dev.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_dev.Location = new System.Drawing.Point(7, 229);
+            this.lbl_dev.Name = "lbl_dev";
+            this.lbl_dev.Size = new System.Drawing.Size(85, 13);
+            this.lbl_dev.TabIndex = 34;
+            this.lbl_dev.Text = "Desenvolvedora";
             // 
             // listbox_publisher
             // 
@@ -176,6 +187,7 @@
             this.listbox_publisher.Name = "listbox_publisher";
             this.listbox_publisher.Size = new System.Drawing.Size(169, 17);
             this.listbox_publisher.TabIndex = 35;
+            this.listbox_publisher.SelectedIndexChanged += new System.EventHandler(this.listbox_publisher_SelectedIndexChanged);
             this.listbox_publisher.MouseEnter += new System.EventHandler(this.listbox_publisher_MouseEnter);
             this.listbox_publisher.MouseLeave += new System.EventHandler(this.listbox_publisher_MouseLeave);
             // 
@@ -194,6 +206,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Location = new System.Drawing.Point(7, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
@@ -213,15 +227,18 @@
             this.Controls.Add(this.game_pictureBox);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_newgame);
-            this.Controls.Add(this.listBox_gender);
+            this.Controls.Add(this.listbox_gender);
             this.Controls.Add(this.dtp_LaunchDate);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_dev);
             this.Controls.Add(this.lbl_genero);
-            this.Controls.Add(this.lbl_plataforma);
+            this.Controls.Add(this.lbl_plataform);
             this.Controls.Add(this.lbl_desc);
-            this.Controls.Add(this.lbl_nome);
+            this.Controls.Add(this.lbl_name);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Game_Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Register";
             ((System.ComponentModel.ISupportInitialize)(this.game_pictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -234,15 +251,15 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_newgame;
         private System.Windows.Forms.PictureBox game_pictureBox;
-        private System.Windows.Forms.Label lbl_nome;
+        private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_desc;
-        private System.Windows.Forms.Label lbl_plataforma;
+        private System.Windows.Forms.Label lbl_plataform;
         private System.Windows.Forms.Label lbl_genero;
         private System.Windows.Forms.TextBox txt_gameName;
         private System.Windows.Forms.TextBox txt_gameDescription;
-        private System.Windows.Forms.ListBox listBox_gender;
+        private System.Windows.Forms.ListBox listbox_gender;
         private System.Windows.Forms.ListBox listbox_plataform;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_dev;
         private System.Windows.Forms.ListBox listbox_publisher;
         private System.Windows.Forms.DateTimePicker dtp_LaunchDate;
         private System.Windows.Forms.Label label2;

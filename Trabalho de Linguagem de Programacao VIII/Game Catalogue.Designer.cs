@@ -60,6 +60,7 @@
             this.btt_search.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btt_search.FlatAppearance.BorderSize = 3;
             this.btt_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
             this.btt_search.Location = new System.Drawing.Point(471, 4);
             this.btt_search.Name = "btt_search";
             this.btt_search.Size = new System.Drawing.Size(75, 29);
@@ -81,6 +82,7 @@
             this.btn_newGame.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btn_newGame.FlatAppearance.BorderSize = 3;
             this.btn_newGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_newGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
             this.btn_newGame.Location = new System.Drawing.Point(81, 562);
             this.btn_newGame.Name = "btn_newGame";
             this.btn_newGame.Size = new System.Drawing.Size(75, 32);
@@ -95,6 +97,7 @@
             this.btt_close.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btt_close.FlatAppearance.BorderSize = 3;
             this.btt_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
             this.btt_close.Location = new System.Drawing.Point(449, 562);
             this.btt_close.Name = "btt_close";
             this.btt_close.Size = new System.Drawing.Size(75, 32);
@@ -109,6 +112,7 @@
             this.btt_delete.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btt_delete.FlatAppearance.BorderSize = 3;
             this.btt_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
             this.btt_delete.Location = new System.Drawing.Point(327, 562);
             this.btt_delete.Name = "btt_delete";
             this.btt_delete.Size = new System.Drawing.Size(75, 32);
@@ -123,6 +127,7 @@
             this.btt_update.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btt_update.FlatAppearance.BorderSize = 3;
             this.btt_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
             this.btt_update.Location = new System.Drawing.Point(204, 562);
             this.btt_update.Name = "btt_update";
             this.btt_update.Size = new System.Drawing.Size(75, 32);
@@ -135,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Locadora.Properties.Resources.bg_galaxy;
             this.ClientSize = new System.Drawing.Size(605, 600);
             this.Controls.Add(this.btn_newGame);
             this.Controls.Add(this.btt_close);
@@ -143,8 +149,10 @@
             this.Controls.Add(this.btt_search);
             this.Controls.Add(this.txtbox_search);
             this.Controls.Add(this.dgv_list_games);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Catalogo_Jogos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Catalogo_Jogos";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list_games)).EndInit();
             this.ResumeLayout(false);

@@ -12,7 +12,6 @@ nome NVARCHAR(100) NOT NULL
 CREATE TABLE Plataformas (
 id INT PRIMARY KEY IDENTITY(1,1),
 nome NVARCHAR(100) NOT NULL,
-fabricante BIT NOT NULL,
 fabricanteID INT,
 CONSTRAINT FK_Plataformas_Fabricantes FOREIGN KEY (FabricanteID) REFERENCES Fabricantes(ID)
 );
@@ -33,9 +32,10 @@ id_plataforma INT,
 id_publicadora INT,
 dataLancamento DATE,
 Description NVARCHAR(1000),
-CONSTRAINT FK_Games_Generos FOREIGN KEY (id_genero) REFERENCES Generos(id),
-CONSTRAINT FK_Games_Plataformas FOREIGN KEY (id_plataforma) REFERENCES Plataformas(id),
-CONSTRAINT FK_Games_Publicadora FOREIGN KEY (id_publicadora) REFERENCES Publicadora(id)
+image VARBINARY(MAX)
+CONSTRAINT FK_Games_Generos FOREIGN KEY (id_genero) REFERENCES Generos(id) ON DELETE CASCADE,
+CONSTRAINT FK_Games_Plataformas FOREIGN KEY (id_plataforma) REFERENCES Plataformas(id) ON DELETE CASCADE,
+CONSTRAINT FK_Games_Publicadora FOREIGN KEY (id_publicadora) REFERENCES Publicadora(id) ON DELETE CASCADE
 );
 
 
@@ -46,8 +46,8 @@ id_game INT,
 data_inicio DATE,
 data_entrega DATE,
 entregue BIT,
-CONSTRAINT FK_Locacao_Usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
-CONSTRAINT FK_Locacao_Games FOREIGN KEY (id_game) REFERENCES Games(id)
+CONSTRAINT FK_Locacao_Usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id) ON DELETE CASCADE,
+CONSTRAINT FK_Locacao_Games FOREIGN KEY (id_game) REFERENCES Games(id) ON DELETE CASCADE
 );
 
 INSERT INTO Fabricantes (nome) VALUES ('Sony');
@@ -61,27 +61,137 @@ INSERT INTO Fabricantes (nome) VALUES ('Konami');
 INSERT INTO Fabricantes (nome) VALUES ('Bandai Namco');
 INSERT INTO Fabricantes (nome) VALUES ('Ubisoft');
 
-INSERT INTO Publicadora (nome) VALUES ('Electronic Arts');
-INSERT INTO Publicadora (nome) VALUES ('Activision');
-INSERT INTO Publicadora (nome) VALUES ('Square Enix');
-INSERT INTO Publicadora (nome) VALUES ('Bethesda');
-INSERT INTO Publicadora (nome) VALUES ('Ubisoft');
-INSERT INTO Publicadora (nome) VALUES ('Sony Interactive Entertainment');
-INSERT INTO Publicadora (nome) VALUES ('Microsoft Studios');
-INSERT INTO Publicadora (nome) VALUES ('Nintendo');
-INSERT INTO Publicadora (nome) VALUES ('Capcom');
+INSERT INTO Publicadora (nome) VALUES ('Rockstar Games');
+INSERT INTO Publicadora (nome) VALUES ('2K Games');
+INSERT INTO Publicadora (nome) VALUES ('Paradox Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Blizzard Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('Valve Corporation');
+INSERT INTO Publicadora (nome) VALUES ('CD Projekt Red');
+INSERT INTO Publicadora (nome) VALUES ('Sega');
+INSERT INTO Publicadora (nome) VALUES ('THQ Nordic');
+INSERT INTO Publicadora (nome) VALUES ('Devolver Digital');
 INSERT INTO Publicadora (nome) VALUES ('Bandai Namco');
+INSERT INTO Publicadora (nome) VALUES ('Electronic Arts');
+INSERT INTO Publicadora (nome) VALUES ('Ubisoft');
+INSERT INTO Publicadora (nome) VALUES ('Square Enix');
+INSERT INTO Publicadora (nome) VALUES ('Capcom');
+INSERT INTO Publicadora (nome) VALUES ('Bethesda Softworks');
+INSERT INTO Publicadora (nome) VALUES ('Activision');
+INSERT INTO Publicadora (nome) VALUES ('Nintendo');
+INSERT INTO Publicadora (nome) VALUES ('Konami');
+INSERT INTO Publicadora (nome) VALUES ('Sony Interactive Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('Microsoft Game Studios');
+INSERT INTO Publicadora (nome) VALUES ('Focus Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('Koei Tecmo');
+INSERT INTO Publicadora (nome) VALUES ('Gearbox Publishing');
+INSERT INTO Publicadora (nome) VALUES ('THQ');
+INSERT INTO Publicadora (nome) VALUES ('Warner Bros. Interactive Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('Crytek');
+INSERT INTO Publicadora (nome) VALUES ('Nexon');
+INSERT INTO Publicadora (nome) VALUES ('Embracer Group');
+INSERT INTO Publicadora (nome) VALUES ('Deep Silver');
+INSERT INTO Publicadora (nome) VALUES ('505 Games');
+INSERT INTO Publicadora (nome) VALUES ('Perfect World Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('NetEase Games');
+INSERT INTO Publicadora (nome) VALUES ('Pearl Abyss');
+INSERT INTO Publicadora (nome) VALUES ('My.com');
+INSERT INTO Publicadora (nome) VALUES ('Asmodee Digital');
+INSERT INTO Publicadora (nome) VALUES ('Atlus');
+INSERT INTO Publicadora (nome) VALUES ('IO Interactive');
+INSERT INTO Publicadora (nome) VALUES ('FromSoftware');
+INSERT INTO Publicadora (nome) VALUES ('Insomniac Games');
+INSERT INTO Publicadora (nome) VALUES ('Annapurna Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Raw Fury');
+INSERT INTO Publicadora (nome) VALUES ('Tripwire Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Feral Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Team17');
+INSERT INTO Publicadora (nome) VALUES ('Humble Games');
+INSERT INTO Publicadora (nome) VALUES ('Modus Games');
+INSERT INTO Publicadora (nome) VALUES ('Krafton');
+INSERT INTO Publicadora (nome) VALUES ('Tencent Games');
+INSERT INTO Publicadora (nome) VALUES ('Playsaurus');
+INSERT INTO Publicadora (nome) VALUES ('Scopely');
+INSERT INTO Publicadora (nome) VALUES ('Riot Games');
+INSERT INTO Publicadora (nome) VALUES ('Wargaming.net');
+INSERT INTO Publicadora (nome) VALUES ('Larian Studios');
+INSERT INTO Publicadora (nome) VALUES ('Daedalic Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('TinyBuild');
+INSERT INTO Publicadora (nome) VALUES ('Hinterland Studio');
+INSERT INTO Publicadora (nome) VALUES ('Chucklefish');
+INSERT INTO Publicadora (nome) VALUES ('Hello Games');
+INSERT INTO Publicadora (nome) VALUES ('Supergiant Games');
+INSERT INTO Publicadora (nome) VALUES ('Innersloth');
+INSERT INTO Publicadora (nome) VALUES ('Voodoo');
+INSERT INTO Publicadora (nome) VALUES ('Gameloft');
+INSERT INTO Publicadora (nome) VALUES ('Miniclip');
+INSERT INTO Publicadora (nome) VALUES ('Big Fish Games');
+INSERT INTO Publicadora (nome) VALUES ('Bluehole');
+INSERT INTO Publicadora (nome) VALUES ('Zynga');
+INSERT INTO Publicadora (nome) VALUES ('King');
+INSERT INTO Publicadora (nome) VALUES ('PopCap Games');
+INSERT INTO Publicadora (nome) VALUES ('DreamWorks Interactive');
+INSERT INTO Publicadora (nome) VALUES ('LucasArts');
+INSERT INTO Publicadora (nome) VALUES ('Frost Giant Studios');
+INSERT INTO Publicadora (nome) VALUES ('Avalanche Studios');
+INSERT INTO Publicadora (nome) VALUES ('Double Fine Productions');
+INSERT INTO Publicadora (nome) VALUES ('Monolith Productions');
+INSERT INTO Publicadora (nome) VALUES ('Epic Games');
+INSERT INTO Publicadora (nome) VALUES ('Splash Damage');
+INSERT INTO Publicadora (nome) VALUES ('Media Molecule');
+INSERT INTO Publicadora (nome) VALUES ('Housemarque');
+INSERT INTO Publicadora (nome) VALUES ('Bluepoint Games');
+INSERT INTO Publicadora (nome) VALUES ('Sucker Punch Productions');
+INSERT INTO Publicadora (nome) VALUES ('ZeniMax Media');
+INSERT INTO Publicadora (nome) VALUES ('Naughty Dog');
+INSERT INTO Publicadora (nome) VALUES ('Rocksteady Studios');
+INSERT INTO Publicadora (nome) VALUES ('Remedy Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('Playdead');
+INSERT INTO Publicadora (nome) VALUES ('Limbo Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Frozenbyte');
+INSERT INTO Publicadora (nome) VALUES ('Coffee Stain Studios');
+INSERT INTO Publicadora (nome) VALUES ('GungHo Online Entertainment');
+INSERT INTO Publicadora (nome) VALUES ('Behaviour Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Outright Games');
+INSERT INTO Publicadora (nome) VALUES ('Proletariat');
+INSERT INTO Publicadora (nome) VALUES ('Voxel Tycoon Studio');
+INSERT INTO Publicadora (nome) VALUES ('Other Ocean Interactive');
+INSERT INTO Publicadora (nome) VALUES ('Cygames');
+INSERT INTO Publicadora (nome) VALUES ('Cloud Imperium Games');
 
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('PlayStation 5', 0, 1);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Xbox Series X', 0, 2);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Nintendo Switch', 0, 3);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('PlayStation 4', 0, 1);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Xbox One', 0, 2);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('PlayStation 3', 0, 1);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Xbox 360', 0, 2);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Wii U', 0, 3);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Sega Genesis', 0, 4);
-INSERT INTO Plataformas (nome, fabricante, fabricanteID) VALUES ('Atari 2600', 0, 5);
+
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation', 1);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation 2', 1);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation 3', 1);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation 4', 1);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation 5', 1);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Xbox', 2);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Xbox 360', 2);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Xbox One', 2);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Xbox Series S', 2);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Xbox Series X', 2);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Nintendo Entertainment System (NES)', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Super Nintendo Entertainment System (SNES)', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Nintendo 64', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('GameCube', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Wii', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Wii U', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Nintendo Switch', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Sega Master System', 4);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Sega Genesis', 4);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Sega Saturn', 4);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Sega Dreamcast', 4);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Atari 2600', 5);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Atari 5200', 5);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Atari 7800', 5);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Atari Jaguar', 5);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Game Boy', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Game Boy Color', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Game Boy Advance', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Nintendo DS', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('Nintendo 3DS', 3);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation Portable (PSP)', 1);
+INSERT INTO Plataformas (nome, fabricanteID) VALUES ('PlayStation Vita', 1);
+
 
 INSERT INTO Generos (nome, descricao) VALUES ('Ação', 'Jogos de ação e aventura');
 INSERT INTO Generos (nome, descricao) VALUES ('RPG', 'Role-playing games');
@@ -94,13 +204,13 @@ INSERT INTO Generos (nome, descricao) VALUES ('Luta', 'Jogos de luta');
 INSERT INTO Generos (nome, descricao) VALUES ('Plataforma', 'Jogos de plataforma');
 INSERT INTO Generos (nome, descricao) VALUES ('FPS', 'First-person shooters');
 
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('The Last of Us Part II', 1, 1, 6, '2020-06-19', 'Ação e aventura');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Cyberpunk 2077', 2, 1, 1, '2020-12-10', 'RPG futurista');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('FIFA 21', 3, 1, 1, '2020-10-09', 'Jogo de futebol');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Halo Infinite', 1, 2, 7, '2021-12-08', 'Ação e tiro em primeira pessoa');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Animal Crossing: New Horizons', 5, 3, 8, '2020-03-20', 'Simulação social');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Resident Evil Village', 1, 1, 9, '2021-05-07', 'Survival horror');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('The Legend of Zelda: Breath of the Wild', 1, 3, 8, '2017-03-03', 'Ação e aventura');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Final Fantasy VII Remake', 2, 1, 3, '2020-04-10', 'RPG de fantasia');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Street Fighter V', 8, 1, 9, '2016-02-16', 'Jogo de luta');
-INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLançamento, Description) VALUES ('Forza Horizon 4', 7, 2, 7, '2018-10-02', 'Jogo de corrida');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('The Last of Us Part II', 1, 1, 6, '2020-06-19', 'Ação e aventura');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Cyberpunk 2077', 2, 1, 1, '2020-12-10', 'RPG futurista');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('FIFA 21', 3, 1, 1, '2020-10-09', 'Jogo de futebol');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Halo Infinite', 1, 2, 7, '2021-12-08', 'Ação e tiro em primeira pessoa');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Animal Crossing: New Horizons', 5, 3, 8, '2020-03-20', 'Simulação social');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Resident Evil Village', 1, 1, 9, '2021-05-07', 'Survival horror');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('The Legend of Zelda: Breath of the Wild', 1, 3, 8, '2017-03-03', 'Ação e aventura');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Final Fantasy VII Remake', 2, 1, 3, '2020-04-10', 'RPG de fantasia');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Street Fighter V', 8, 1, 9, '2016-02-16', 'Jogo de luta');
+INSERT INTO Games (titulo, id_genero, id_plataforma, id_publicadora, dataLancamento, Description) VALUES ('Forza Horizon 4', 7, 2, 7, '2018-10-02', 'Jogo de corrida');

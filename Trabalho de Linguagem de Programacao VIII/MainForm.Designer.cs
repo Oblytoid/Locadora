@@ -64,6 +64,7 @@
             this.btn_alocar.TabIndex = 0;
             this.btn_alocar.Text = "Alocar";
             this.btn_alocar.UseVisualStyleBackColor = false;
+            this.btn_alocar.Click += new System.EventHandler(this.btn_alocar_Click);
             // 
             // btn_gameManagement
             // 

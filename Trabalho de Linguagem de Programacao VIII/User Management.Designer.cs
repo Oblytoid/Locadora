@@ -176,7 +176,8 @@
             this.Name = "User_Management";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "User Management";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Gerenciar Usuarios";
             this.Load += new System.EventHandler(this.User_Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_user)).EndInit();
             this.ResumeLayout(false);

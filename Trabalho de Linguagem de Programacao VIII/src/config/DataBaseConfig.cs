@@ -8,6 +8,6 @@ namespace Locadora.src.config
 {
     public static class DataBaseConfig
     {
-        public static string ConnectionString { get; } = @"Data Source=DESKTOP-FQKS1SS\SQLEXPRESS; integrated security=SSPI;initial catalog=Locadora";
+        public static string ConnectionString { get; } = @"Data Source=DESKTOP-FQKS1SS\SQLEXPRESS; integrated security=SSPI;initial catalog=Locadora2";
     }
 }

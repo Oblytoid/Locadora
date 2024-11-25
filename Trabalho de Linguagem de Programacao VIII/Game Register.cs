@@ -25,7 +25,7 @@ namespace Locadora
 
             originalSize = listbox_plataform.Size;
             increasedSize = new Size(originalSize.Width, originalSize.Height + 40);
-            RefleshComboBox();
+            RefleshListBox();
         }
 
         private void btt_close_Click(object sender, EventArgs e)
@@ -34,21 +34,30 @@ namespace Locadora
         }
 
         
-        private void RefleshComboBox()
+        private void RefleshListBox()
         {            
             foreach (PlataformItem pf in PlataformController.GetAll())
             {
-                listbox_plataform.Items.Add(pf);
+                if (!listbox_plataform.Items.Contains(pf))
+                {
+                    listbox_plataform.Items.Add(pf);
+                }
             }
 
             foreach (GenderItem gr in GenderController.GetAllGenders())
             {
-                listBox_gender.Items.Add(gr);
+                if (!listbox_gender.Items.Contains(gr))
+                {
+                    listbox_gender.Items.Add(gr);
+                }
             }
 
             foreach (PublisherItem pb in PublisherController.GetAllPublishers())
             {
-                listbox_publisher.Items.Add(pb);
+                if (!listbox_publisher.Items.Contains(pb))
+                {
+                    listbox_publisher.Items.Add(pb);
+                }
             }
         }
         
@@ -76,12 +85,12 @@ namespace Locadora
 
         private void listBox_gender_MouseEnter(object sender, EventArgs e)
         {
-            listBox_gender.Size = increasedSize;
+            listbox_gender.Size = increasedSize;
         }
 
         private void listBox_gender_MouseLeave(object sender, EventArgs e)
         {
-            listBox_gender.Size = originalSize;
+            listbox_gender.Size = originalSize;
             CenterSelectedItem(sender as ListBox);
         }
         
@@ -106,7 +115,7 @@ namespace Locadora
 
         private void btn_newgame_Click(object sender, EventArgs e)
         {
-            if (listbox_plataform.SelectedItem == null || listBox_gender.SelectedItem == null || listbox_publisher.SelectedItem == null)
+            if (listbox_plataform.SelectedItem == null || listbox_gender.SelectedItem == null || listbox_publisher.SelectedItem == null)
             {
                 MessageBox.Show("Por favor, selecione todas as opções: Plataforma, Gênero e Publicadora.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -122,7 +131,7 @@ namespace Locadora
             string gameDesc = txt_gameDescription.Text;
             DateTime launchDate = dtp_LaunchDate.Value;
             PlataformItem selectedPlatform = (PlataformItem)listbox_plataform.SelectedItem;
-            GenderItem selectedGender = (GenderItem)listBox_gender.SelectedItem;
+            GenderItem selectedGender = (GenderItem)listbox_gender.SelectedItem;
             PublisherItem selectedPublisher = (PublisherItem)listbox_publisher.SelectedItem;
             Image gameImage = game_pictureBox.Image;
 
@@ -139,5 +148,9 @@ namespace Locadora
             this.Close();
         }
 
+        private void listbox_publisher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

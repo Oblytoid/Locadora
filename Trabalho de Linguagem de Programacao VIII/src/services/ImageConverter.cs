@@ -31,14 +31,13 @@ namespace Locadora.src.services
         }
 
         public static byte[] ImageToByteArray(Image image)
-        {
-            if (image == null)
-                throw new ArgumentNullException(nameof(image), "A imagem não pode ser nula.");
-
-            try
+        {         
+            using (MemoryStream ms = new MemoryStream())
             {
-                using (MemoryStream ms = new MemoryStream())
+                try
                 {
+                    if (image == null)
+                        throw new ArgumentNullException(nameof(image), "A imagem não pode ser nula.");
 
                     if (ImageFormat.Jpeg.Equals(image.RawFormat) ||
                         ImageFormat.Png.Equals(image.RawFormat) ||
@@ -53,11 +52,11 @@ namespace Locadora.src.services
                         throw new InvalidOperationException("Formato de imagem não suportado.");
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao converter a imagem para byte array: {ex.Message}");
-                throw;
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erro ao converter a imagem para byte array: {ex.Message}");
+                    throw;
+                }
             }
         }
     }

@@ -119,7 +119,7 @@
             this.lbl_sobrenome.AutoSize = true;
             this.lbl_sobrenome.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_sobrenome.Image = ((System.Drawing.Image)(resources.GetObject("lbl_sobrenome.Image")));
-            this.lbl_sobrenome.Location = new System.Drawing.Point(14, 216);
+            this.lbl_sobrenome.Location = new System.Drawing.Point(14, 211);
             this.lbl_sobrenome.Name = "lbl_sobrenome";
             this.lbl_sobrenome.Size = new System.Drawing.Size(64, 13);
             this.lbl_sobrenome.TabIndex = 3;
@@ -127,14 +127,14 @@
             // 
             // txt_sobrenome
             // 
-            this.txt_sobrenome.Location = new System.Drawing.Point(82, 213);
+            this.txt_sobrenome.Location = new System.Drawing.Point(82, 208);
             this.txt_sobrenome.Name = "txt_sobrenome";
             this.txt_sobrenome.Size = new System.Drawing.Size(198, 20);
             this.txt_sobrenome.TabIndex = 4;
             // 
             // txt_cpf
             // 
-            this.txt_cpf.Location = new System.Drawing.Point(82, 249);
+            this.txt_cpf.Location = new System.Drawing.Point(82, 239);
             this.txt_cpf.Name = "txt_cpf";
             this.txt_cpf.Size = new System.Drawing.Size(198, 20);
             this.txt_cpf.TabIndex = 5;
@@ -146,7 +146,7 @@
             this.lbl_dataNascimento.AutoSize = true;
             this.lbl_dataNascimento.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_dataNascimento.Image = ((System.Drawing.Image)(resources.GetObject("lbl_dataNascimento.Image")));
-            this.lbl_dataNascimento.Location = new System.Drawing.Point(4, 380);
+            this.lbl_dataNascimento.Location = new System.Drawing.Point(14, 369);
             this.lbl_dataNascimento.Name = "lbl_dataNascimento";
             this.lbl_dataNascimento.Size = new System.Drawing.Size(107, 13);
             this.lbl_dataNascimento.TabIndex = 7;
@@ -157,7 +157,7 @@
             // 
             this.dtp_nascimento.CustomFormat = "dd/MM/yyyy";
             this.dtp_nascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_nascimento.Location = new System.Drawing.Point(125, 373);
+            this.dtp_nascimento.Location = new System.Drawing.Point(125, 363);
             this.dtp_nascimento.MaxDate = new System.DateTime(2024, 10, 22, 0, 0, 0, 0);
             this.dtp_nascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtp_nascimento.Name = "dtp_nascimento";
@@ -167,7 +167,7 @@
             // 
             // txt_endereco
             // 
-            this.txt_endereco.Location = new System.Drawing.Point(82, 275);
+            this.txt_endereco.Location = new System.Drawing.Point(82, 270);
             this.txt_endereco.Name = "txt_endereco";
             this.txt_endereco.Size = new System.Drawing.Size(198, 20);
             this.txt_endereco.TabIndex = 10;
@@ -177,7 +177,7 @@
             this.lbl_endereco.AutoSize = true;
             this.lbl_endereco.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_endereco.Image = ((System.Drawing.Image)(resources.GetObject("lbl_endereco.Image")));
-            this.lbl_endereco.Location = new System.Drawing.Point(14, 278);
+            this.lbl_endereco.Location = new System.Drawing.Point(14, 273);
             this.lbl_endereco.Name = "lbl_endereco";
             this.lbl_endereco.Size = new System.Drawing.Size(56, 13);
             this.lbl_endereco.TabIndex = 11;
@@ -186,7 +186,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(82, 334);
+            this.txt_email.Location = new System.Drawing.Point(82, 332);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(198, 20);
             this.txt_email.TabIndex = 12;
@@ -196,7 +196,7 @@
             this.lbl_email.AutoSize = true;
             this.lbl_email.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_email.Image = ((System.Drawing.Image)(resources.GetObject("lbl_email.Image")));
-            this.lbl_email.Location = new System.Drawing.Point(14, 334);
+            this.lbl_email.Location = new System.Drawing.Point(14, 335);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(38, 13);
             this.lbl_email.TabIndex = 13;
@@ -207,7 +207,7 @@
             this.lbl_cpf.AutoSize = true;
             this.lbl_cpf.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_cpf.Image = ((System.Drawing.Image)(resources.GetObject("lbl_cpf.Image")));
-            this.lbl_cpf.Location = new System.Drawing.Point(14, 252);
+            this.lbl_cpf.Location = new System.Drawing.Point(14, 242);
             this.lbl_cpf.Name = "lbl_cpf";
             this.lbl_cpf.Size = new System.Drawing.Size(30, 13);
             this.lbl_cpf.TabIndex = 14;
@@ -218,7 +218,7 @@
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(14, 306);
+            this.label2.Location = new System.Drawing.Point(14, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 16;
@@ -269,7 +269,7 @@
             this.MinimizeBox = false;
             this.Name = "RegisterUser";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cadastrar Usuario";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picture_user)).EndInit();

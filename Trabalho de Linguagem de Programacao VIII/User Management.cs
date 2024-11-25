@@ -115,8 +115,6 @@ namespace Locadora
             else {
                 MessageBox.Show("Ação cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void btt_close_Click(object sender, EventArgs e)

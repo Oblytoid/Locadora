@@ -87,3 +87,4 @@ G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\De
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.MainForm.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.Game_Location.resources
 E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.MainForm.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Debug\Locadora.New_Alocation.resources

@@ -23,9 +23,9 @@ namespace Locadora.src.controller
             userRepository.DeleteUser(user);
         }
 
-        public static void UpdateUser(User user)
+        public static void UpdateUser(User user, bool saveImage)
         {
-            userRepository.UpdateUser(user);
+            userRepository.UpdateUser(user, saveImage);
         }
 
         public static List<User> GetAllUsers(bool filter = false, string search = "")

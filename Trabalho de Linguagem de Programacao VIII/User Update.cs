@@ -16,7 +16,7 @@ namespace Locadora
     public partial class User_Update : Form
     {
         User user;
-
+        bool saveImage = false;
         public User_Update(User user)
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace Locadora
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string imagePath = openFileDialog.FileName;
-
+                    saveImage = true;
                     picture_user.Image = Image.FromFile(imagePath);
 
                     user.ProfileImage = picture_user.Image;
@@ -65,7 +65,6 @@ namespace Locadora
         }
 
 
-
         private void btt_update_Click(object sender, EventArgs e)
         {
             if (Required.CheckRequiredField(txt_email,txt_endereco,txt_telefone))
@@ -74,9 +73,10 @@ namespace Locadora
                 user.Endereco = txt_endereco.Text;
                 user.Telefone = txt_telefone.Text;
                 user.ProfileImage = picture_user.Image;
-                UserController.UpdateUser(user);
+                UserController.UpdateUser(user, saveImage);
             }
-            UserController.UpdateUser(user);
+            UserController.UpdateUser(user, saveImage);
+            this.Close();
         }
 
         private void txt_telefone_TextChanged(object sender, EventArgs e)

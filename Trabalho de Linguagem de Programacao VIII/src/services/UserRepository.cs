@@ -52,7 +52,7 @@ namespace Locadora.src.services
             }
         }
 
-        public  void UpdateUser(User user)
+        public  void UpdateUser(User user, bool saveImage)
         {
 
             String query;
@@ -68,14 +68,12 @@ namespace Locadora.src.services
                     command.Parameters.AddWithValue("@Telefone", user.Telefone);
                     command.Parameters.AddWithValue("@Endereco", user.Endereco);
                     command.Parameters.AddWithValue("@Email", user.Email.ToLower());
-
-
                     command.Parameters.AddWithValue("@ID", user.Id);
 
                     rowsAffected = command.ExecuteNonQuery();
                     connection.Close();
 
-                    if (user.ProfileImage != null)
+                    if (user.ProfileImage != null && saveImage)
                     {
                         SaveUserImage(user);
                     }
@@ -234,21 +232,28 @@ namespace Locadora.src.services
         {
 
             Byte[] imageByte = ImageConverter.ImageToByteArray(user.ProfileImage);
-
-            using (SqlConnection connection = new SqlConnection(SQL))
+            try
             {
-                connection.Open();
-
-                Console.WriteLine("salvando imagem");
-                string query = "UPDATE Usuario SET imagem = @Imagem WHERE id = @Id";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection connection = new SqlConnection(SQL))
                 {
-                    command.Parameters.AddWithValue("@Imagem", imageByte);
-                    command.Parameters.AddWithValue("@Id", GetUserId(user));
+                    connection.Open();
 
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                    Console.WriteLine("salvando imagem");
+                    string query = "UPDATE Usuario SET imagem = @Imagem WHERE id = @Id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Imagem", imageByte);
+                        command.Parameters.AddWithValue("@Id", GetUserId(user));
+
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 

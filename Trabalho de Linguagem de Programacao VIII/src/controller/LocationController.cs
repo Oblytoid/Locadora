@@ -1,36 +1,35 @@
 ﻿using Locadora.src.model;
-using Locadora.src.model.Locadora.src.model;
 using Locadora.src.services;
 using System.Collections.Generic;
 
 namespace Locadora.src.controller
 {
-    public class LocacaoController
+    public class LocationController
     {
-        private LocacaoRepository locacaoRepository = new LocacaoRepository();
+        private static LocacaoRepository locacaoRepository = new LocacaoRepository();
 
-        public bool RegisterLocation(LocationItem locacao)
+        public static bool RegisterLocation(LocationItem locacao)
         {
-            if (locacao.UserId <= 0 || locacao.GameId <= 0)
-            {
-                return false;
-            }
+            return locacaoRepository.SaveLocation(locacao);
 
-            locacaoRepository.SaveLocation(locacao);
-            return true;
         }
 
-        public LocationItem GetLocation(int id)
+        public static LocationItem GetLocation(int id)
         {
             return locacaoRepository.GetLocationById(id);
         }
 
-        public List<LocationItem> GetAllLocations()
+        public static void MarkDelivered(LocationItem lc)
+        {
+            locacaoRepository.MarkAsDelivered(lc.Id);
+        }
+
+        public static List<LocationItem> GetAllLocations()
         {
             return locacaoRepository.GetAllLocations();
         }
 
-        public bool UpdateLocation(LocationItem locacao)
+        public static bool UpdateLocation(LocationItem locacao)
         {
             if (locacao.UserId <= 0 || locacao.GameId <= 0)
             {
@@ -41,7 +40,7 @@ namespace Locadora.src.controller
             return true;
         }
 
-        public bool DeleteLocation(int id)
+        public static bool DeleteLocation(int id)
         {
             locacaoRepository.DeleteLocation(id);
             return true;

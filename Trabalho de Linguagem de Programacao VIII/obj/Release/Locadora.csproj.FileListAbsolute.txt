@@ -14,3 +14,21 @@ G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Re
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.pdb
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\bin\Release\Locadora.pdb
 G:\Faculdade\C#\2\Locadora-main\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.csprojResolveAssemblyReference.cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Release\Locadora.exe.config
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.pdb
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Release\src\font\Pretendo.ttf
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Release\Locadora.exe
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\bin\Release\Locadora.pdb
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.csprojResolveAssemblyReference.cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.Game_Location.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.Game_Register.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.Game_Update.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.New_Alocation.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.RegisterUser.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.Catalogo_Jogos.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.User_Management.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.MainForm.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.Properties.Resources.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.User_Update.resources
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.csproj.GenerateResource.Cache
+E:\Codigos\C#\Trabalho de Linguagem de Programacao VIII\Trabalho de Linguagem de Programacao VIII\obj\Release\Locadora.exe

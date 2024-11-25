@@ -13,14 +13,16 @@ using System.IO;
 
 namespace Locadora
 {
-
+   
     public partial class MainForm : Form
     {
-        
 
+        int i;
+       
         public MainForm()
         {
             InitializeComponent();
+  
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,13 +33,6 @@ namespace Locadora
             TextFont.ButtonUseCustomFont(path, 8, btn_alocar);
             TextFont.ButtonUseCustomFont(path, 8, btn_userManagement);
             TextFont.ButtonUseCustomFont(path, 8, btn_gameManagement);
-        }
-        
-
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegisterUser cadastrar = new RegisterUser();
-            cadastrar.ShowDialog();
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,5 +73,13 @@ namespace Locadora
             Catalogo_Jogos cj = new Catalogo_Jogos();
             cj.ShowDialog();
         }
+
+        private void btn_alocar_Click(object sender, EventArgs e)
+        {
+            Game_Location gl = new Game_Location();
+            gl.ShowDialog();
+        }
+
+       
     }
 }
