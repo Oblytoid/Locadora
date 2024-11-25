@@ -91,5 +91,10 @@ namespace Locadora
                 textBox.SelectionStart = formattedInput.Length;
             }
         }
+
+        private void User_Update_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

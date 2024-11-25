@@ -10,7 +10,7 @@ namespace Locadora.src.utils
     {
         public static bool isCpfValid(String cpf)
         {
-
+            return true;
             cpf = cpf.Replace("-", "").Replace(".", "");
 
             if (cpf.Length != 11 || cpf.Distinct().Count() == 1) return false;

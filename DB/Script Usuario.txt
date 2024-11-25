@@ -10,7 +10,6 @@ CREATE TABLE Usuario (
 	email varchar(50) NOT NULL,
 	data_nasc date,
 	imagem VARBINARY(MAX)
-
 );
 
 INSERT INTO Usuario (cpf, nome, sobrenome, telefone, endereco, email, data_nasc) VALUES

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Locadora.src.model
 {
-    class Game
+    public class Game
     {
         private int id;
         private string name;
@@ -18,7 +18,7 @@ namespace Locadora.src.model
         private string launchDate;
         private Image gameImage = null;
 
-        public  Game(string name, string desc, PlataformItem plataform, GenderItem gender)
+        public Game(string name, string desc, PlataformItem plataform, GenderItem gender)
         {
             this.name = name;
             this.desc = desc;

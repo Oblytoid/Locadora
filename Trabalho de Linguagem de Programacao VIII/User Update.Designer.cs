@@ -261,6 +261,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Atualizar Usuario";
+            this.Load += new System.EventHandler(this.User_Update_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture_user)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

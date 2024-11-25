@@ -240,6 +240,7 @@
             this.Name = "Game_Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game Register";
+            this.Load += new System.EventHandler(this.Game_Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.game_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

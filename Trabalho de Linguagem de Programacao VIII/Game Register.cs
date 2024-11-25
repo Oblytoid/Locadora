@@ -152,5 +152,10 @@ namespace Locadora
         {
 
         }
+
+        private void Game_Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -92,7 +92,7 @@
             this.btt_delete.Name = "btt_delete";
             this.btt_delete.Size = new System.Drawing.Size(75, 32);
             this.btt_delete.TabIndex = 7;
-            this.btt_delete.Text = "deletar";
+            this.btt_delete.Text = "Deletar";
             this.btt_delete.UseVisualStyleBackColor = false;
             this.btt_delete.Click += new System.EventHandler(this.btt_delete_Click);
             // 
@@ -123,6 +123,7 @@
             this.Name = "Game_Location";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Game_Location";
+            this.Load += new System.EventHandler(this.Game_Location_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_location)).EndInit();
             this.ResumeLayout(false);
 

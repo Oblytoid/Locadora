@@ -99,10 +99,7 @@ namespace Locadora
             });
         }
 
-        private void btt_update_Click(object sender, EventArgs e)
-        {
-            RefreshGameList();
-        }
+        
 
         private void btt_delete_Click(object sender, EventArgs e)
         {

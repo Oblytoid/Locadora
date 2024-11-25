@@ -126,7 +126,7 @@ namespace Locadora
         private void btn_newUser_Click(object sender, EventArgs e)
         {
             RegisterUser registerUser = new RegisterUser();
-            registerUser.Show();
+            registerUser.ShowDialog();
             RefreshUserList();
         }
 

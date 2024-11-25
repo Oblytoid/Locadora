@@ -53,6 +53,7 @@ namespace Locadora
             {
                 DataPropertyName = "DataEntrega",
                 HeaderText = "Data de entrega",
+                Name = "Data_entrega",
                 Width = 100
             });
             dataGridView_location.Columns.Add(new DataGridViewTextBoxColumn
@@ -74,6 +75,7 @@ namespace Locadora
 
         private void DataGridView_location_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            
             if (dataGridView_location.Columns[e.ColumnIndex].Name == "Entregue")
             {
                 bool value = (bool)e.Value;
@@ -84,8 +86,18 @@ namespace Locadora
                 }
                 else
                 {
-                    e.Value = "Não Entregue";
-                    e.CellStyle.BackColor = Color.Red;
+                    DataGridViewRow row = dataGridView_location.Rows[e.RowIndex];
+                    DateTime dataEntrega = Convert.ToDateTime(row.Cells["Data_entrega"].Value);
+                    if (dataEntrega < DateTime.Now)
+                    {
+                        e.Value = "Atrasado";
+                        e.CellStyle.BackColor = Color.Purple;
+                    }
+                    else
+                    {
+                        e.Value = "Não Entregue";
+                        e.CellStyle.BackColor = Color.Red;
+                    }
                 }
                 e.FormattingApplied = true;
             }
@@ -146,6 +158,11 @@ namespace Locadora
             else {
                 MessageBox.Show("Ação cancelada.", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Game_Location_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

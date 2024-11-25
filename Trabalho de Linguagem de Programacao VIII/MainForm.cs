@@ -15,10 +15,7 @@ namespace Locadora
 {
    
     public partial class MainForm : Form
-    {
-
-        int i;
-       
+    {       
         public MainForm()
         {
             InitializeComponent();

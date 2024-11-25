@@ -74,12 +74,6 @@
     <Compile Include="Game Register.Designer.cs">
       <DependentUpon>Game Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game Update.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Game Update.Designer.cs">
-      <DependentUpon>Game Update.cs</DependentUpon>
-    </Compile>
     <Compile Include="New Location.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Game Register.resx">
       <DependentUpon>Game Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Game Update.resx">
-      <DependentUpon>Game Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="New location.resx">
       <DependentUpon>New Location.cs</DependentUpon>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Locadora.src.model
 {
     
-    class PlataformItem
+    public class PlataformItem
     {
         private int id;
         private string name;

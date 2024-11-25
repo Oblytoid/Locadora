@@ -34,7 +34,6 @@
             this.btn_newGame = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
             this.btt_delete = new System.Windows.Forms.Button();
-            this.btt_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list_games)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,28 +112,13 @@
             this.btt_delete.FlatAppearance.BorderSize = 3;
             this.btt_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btt_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
-            this.btt_delete.Location = new System.Drawing.Point(327, 562);
+            this.btt_delete.Location = new System.Drawing.Point(265, 562);
             this.btt_delete.Name = "btt_delete";
             this.btt_delete.Size = new System.Drawing.Size(75, 32);
             this.btt_delete.TabIndex = 8;
             this.btt_delete.Text = "Excluir";
             this.btt_delete.UseVisualStyleBackColor = false;
             this.btt_delete.Click += new System.EventHandler(this.btt_delete_Click);
-            // 
-            // btt_update
-            // 
-            this.btt_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(18)))), ((int)(((byte)(28)))));
-            this.btt_update.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.btt_update.FlatAppearance.BorderSize = 3;
-            this.btt_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btt_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(186)))), ((int)(((byte)(11)))));
-            this.btt_update.Location = new System.Drawing.Point(204, 562);
-            this.btt_update.Name = "btt_update";
-            this.btt_update.Size = new System.Drawing.Size(75, 32);
-            this.btt_update.TabIndex = 7;
-            this.btt_update.Text = "Atualizar";
-            this.btt_update.UseVisualStyleBackColor = false;
-            this.btt_update.Click += new System.EventHandler(this.btt_update_Click);
             // 
             // Catalogo_Jogos
             // 
@@ -145,7 +129,6 @@
             this.Controls.Add(this.btn_newGame);
             this.Controls.Add(this.btt_close);
             this.Controls.Add(this.btt_delete);
-            this.Controls.Add(this.btt_update);
             this.Controls.Add(this.btt_search);
             this.Controls.Add(this.txtbox_search);
             this.Controls.Add(this.dgv_list_games);
@@ -166,7 +149,6 @@
         private System.Windows.Forms.Button btt_search;
         private System.Windows.Forms.TextBox txtbox_search;
         private System.Windows.Forms.Button btn_newGame;
-        private System.Windows.Forms.Button btt_update;
         private System.Windows.Forms.Button btt_delete;
         private System.Windows.Forms.Button btt_close;
     }

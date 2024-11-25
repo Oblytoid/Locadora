@@ -14,8 +14,8 @@ namespace Locadora.src.controller
 
         public static bool RegisterUser(User user)
         {
-            userRepository.SaveUser(user);
-            return true;
+            
+            return userRepository.SaveUser(user); ;
         }
 
         public static void DeleteUser(User user)

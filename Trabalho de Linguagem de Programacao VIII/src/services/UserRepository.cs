@@ -16,7 +16,7 @@ namespace Locadora.src.services
         private  int rowsAffected;
 
        
-        public  void SaveUser(User user)
+        public bool SaveUser(User user)
         {
             try
             {
@@ -44,12 +44,15 @@ namespace Locadora.src.services
             catch (SqlException ex)
             {
                 Console.Out.WriteLine($"Erro: {ex.Message}");
+                return false;
+
             }
             finally
             {
                 Console.WriteLine($"Número de linhas afetadas: {rowsAffected}");
                 connection.Close();
             }
+            return true;
         }
 
         public  void UpdateUser(User user, bool saveImage)
